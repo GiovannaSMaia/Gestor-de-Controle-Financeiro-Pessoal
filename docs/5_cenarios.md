@@ -1,78 +1,105 @@
-# Cenário de Análise/Problema
+# Cenários de Análise e Jornadas Atuais
 
-> **_NOTE:_**: A equipe deve pensar em cenários existentes na atualidade (que causam problemas para os usuários) e que a interface prevista ajudará a resolver o problema. Cenário de Análise/Problema é uma história triste. Não descreve a solução. Descreve somente o problema.
+> **Status:** versão preliminar. Os cenários descrevem o problema atual, antes da existência da solução. Detalhes ainda não sustentados pelos dados foram mantidos como questões de refinamento.
 
-1) **Cenário de Análise/Problema**
-- Escreva uma narrativa (não uma lista de requisitos) contando como a persona vive o problema hoje.
-- Baseie-se nas dores identificadas no [Perfil do Usuário](3_perfil_usuario.md) e no [Mapa de Empatia](4_personas.md) — não invente um problema novo.
-- Não mencione o produto/serviço que a equipe vai construir; a história descreve a vida da persona **antes** dele existir.
+## Persona 1 — O Jovem Prático e Imediato
 
-2) **Questões de Refinamento**
-- Levante perguntas sobre o cenário que ainda ficaram em aberto: por que isso acontece? Acontece sempre ou só às vezes? Quem mais é afetado? O que a persona já tentou para resolver?
-- O objetivo é encontrar lacunas e suposições no cenário inicial, não respondê-las ainda.
+### 1. Cenário de análise/problema
 
-3) **Refinamento do Cenário de Análise/Problema**
-- Reescreva o cenário incorporando as respostas às questões de refinamento, tornando-o mais específico, concreto e verificável.
+Depois de comprar um lanche na cantina, o jovem guarda o comprovante e segue para a aula. Na volta para casa, consulta o saldo pelo aplicativo do banco enquanto está no transporte público, mas não consegue identificar rapidamente quanto já gastou com alimentação. Pensa em registrar o valor no bloco de notas, porém está em pé, cercado por ruído, distrações e movimento. Decide deixar para depois. Ao fim da semana, encontra anotações incompletas, não se lembra de todas as compras pequenas e percebe que o saldo está menor do que esperava.
 
-4) **Contexto de Uso**
-- Descreva o ambiente em que o problema ocorre (e onde o futuro produto/serviço deverá ser utilizado).
-- Qual/quais o(s) contexto(s) sociais, econômicos e culturais existentes neste ambiente?
-- Quais informações sobre o ambiente devem ser consideradas antes de qualquer interação?
-- O que normalmente está acontecendo no ambiente quando o problema ocorre?
+### 2. Questões de refinamento
 
-5) **Jornada do Usuário (atual, sem solução)**
-- Descreva a jornada da persona enfrentando o problema **hoje**, do início ao fim do cenário — sem envolver o produto/serviço que a equipe vai construir.
-- Aponte, em cada etapa, o estado emocional da persona (frustração, confiança, dúvida, satisfação).
-- Complemente com um diagrama de jornada (`journey`) do Mermaid, agrupando as etapas em seções e atribuindo uma nota de 1 (péssimo) a 9 (ótimo) ao estado emocional de cada uma.
+- Com que frequência pequenos gastos deixam de ser registrados?
+- Quanto tempo depois da compra o usuário normalmente tenta organizar os dados?
+- Quais categorias são mais esquecidas?
+- O usuário confere notificações ou comprovantes para reconstruir os gastos?
+- Quais condições tornam o registro rápido o bastante para não ser abandonado?
 
----
+### 3. Refinamento do cenário
 
-## Exemplo de entrega
+> **Implementação futura:** será escrito após entrevistas ou observações responderem às questões acima.
 
-> Continuação do exemplo fictício do app "Estuda+", usando a persona [Marina Souza](4_personas.md). Copie a estrutura, não o conteúdo.
+### 4. Contexto de uso
 
-### 1) Cenário de Análise/Problema
+- Uso predominantemente em smartphone e em movimento.
+- Situações comuns: transporte público, caminhada pelo campus e retorno das aulas no período noturno.
+- Ambiente com solavancos, ruído, iluminação variável e muitas distrações.
+- Atenção limitada e possibilidade de usar apenas uma mão.
+- Necessidade de concluir uma interação em poucos segundos.
 
-Marina está no 4º semestre e, como sempre faz antes de provas, entra em um grupo de WhatsApp criado por uma colega para estudar Estruturas de Dados junto com mais quatro pessoas da turma. Na primeira semana, todo mundo manda mensagens animadas combinando encontros e trocando resumos. Mas ninguém definiu quem ficaria responsável por qual tópico, e aos poucos as mensagens ficam mais espaçadas. Duas semanas antes da prova, o grupo está praticamente silencioso — só restam mensagens antigas sem resposta. Marina não sabe se deve cobrar os colegas, criar outro grupo do zero ou simplesmente desistir e estudar sozinha, como acabou fazendo nas últimas duas vezes.
+### 5. Jornada atual
 
-### 2) Questões de Refinamento
-
-- Isso acontece com todos os grupos de estudo da Marina ou só com alguns?
-- Por que ninguém assume a organização do grupo depois da primeira semana?
-- O problema é falta de ferramenta (lembrete, divisão de tarefas) ou falta de compromisso dos colegas?
-- Existe um momento específico em que o grupo começa a esvaziar?
-- Marina já tentou algo para reverter a situação? O que aconteceu?
-
-### 3) Refinamento do Cenário de Análise/Problema
-
-Nas três últimas vezes em que Marina participou de grupos de estudo, o padrão se repetiu: o grupo é criado de forma informal, sem que ninguém assuma explicitamente a organização, e sem dividir quem estuda qual tópico. Passada a primeira semana — justamente quando o volume de conteúdo aumenta e a rotina de estágio de Marina fica mais apertada —, as respostas somem. Ela já tentou mandar mensagem cobrando o grupo duas vezes, mas se sentiu "chata" fazendo isso e parou. O problema não é falta de vontade de estudar em grupo: é a ausência de qualquer estrutura (divisão de tópicos, lembretes, um responsável) que sustente o grupo depois do entusiasmo inicial.
-
-### 4) Contexto de Uso
-
-- Marina usa o celular entre aulas e à noite, geralmente em casa ou na biblioteca da faculdade, com Wi-Fi ou 4G.
-- Contexto social: grupo de 4-6 colegas de turma, sem hierarquia definida — ninguém "responsável" formalmente pelo grupo.
-- O problema se intensifica na semana anterior às provas, quando o volume de conteúdo e a ansiedade aumentam.
-- Marina normalmente está com atenção dividida (entre uma aula e outra, ou cansada depois do estágio) quando tenta engajar o grupo.
-
-### 5) Jornada do Usuário (atual, sem solução) — Marina
-
-| Etapa | O que acontece | Estado emocional |
-| :---- | :---- | :---- |
-| 1. Criação do grupo | Uma colega cria um grupo no WhatsApp e convida a turma para estudar juntos. | Animada |
-| 2. Primeira semana | Mensagens trocadas com entusiasmo, mas sem definir quem estuda o quê. | Confiante |
-| 3. Silêncio no grupo | Colegas param de responder; ninguém assume a organização. | Frustrada |
-| 4. Tentativa de reverter | Marina manda uma mensagem cobrando o grupo; poucas ou nenhuma resposta. | Insegura |
-| 5. Véspera da prova | Marina desiste do grupo e estuda sozinha, sem saber se cobriu os tópicos certos. | Exausta / decepcionada |
+| Etapa | Ação atual | Pensamento ou emoção |
+| :--- | :--- | :--- |
+| 1. Realiza a compra | Paga um gasto pequeno durante a rotina. | Neutro; concentrado na atividade imediata. |
+| 2. Tenta acompanhar | Consulta rapidamente o saldo ou a fatura no banco. | Pressa e dúvida sobre o total já gasto. |
+| 3. Adia o registro | Considera anotar o gasto, mas a situação dificulta digitar e organizar. | Leve aversão e impaciência. |
+| 4. Tenta reconstruir | Mais tarde, procura anotações e movimentações bancárias. | Confusão e frustração. |
+| 5. Perde visibilidade | Não consegue lembrar ou categorizar todos os pequenos gastos. | Insegurança sobre o próprio saldo. |
 
 ```mermaid
 journey
-    title Jornada atual de Marina (sem solução)
-    section Formar o grupo
-      Colega cria grupo no WhatsApp: 8: Marina
-      Trocar mensagens animadas na 1ª semana: 7: Marina
-    section Grupo esvazia
-      Colegas param de responder: 3: Marina
-      Cobrar o grupo, sem retorno: 2: Marina
-    section Prova se aproxima
-      Estudar sozinha, sem saber se cobriu tudo: 1: Marina
+    title Jornada atual do Jovem Prático e Imediato
+    section Compra
+      Realizar um pequeno gasto: 7: Usuário
+      Consultar rapidamente o banco: 6: Usuário
+    section Adiamento
+      Deixar o registro para depois: 4: Usuário
+    section Reconstrução
+      Procurar anotações e movimentações: 3: Usuário
+      Não identificar todos os gastos: 2: Usuário
 ```
+
+## Persona 2 — O Analista de Planilhas e Metas
+
+### 1. Cenário de análise/problema
+
+No fim de semana, o analista abre suas planilhas para fechar o ciclo financeiro. Reúne dados do aplicativo bancário, da fatura do cartão e de registros feitos ao longo do período. Antes de analisar os resultados, precisa corrigir categorias, preencher compras esquecidas e conferir lançamentos recorrentes. A manutenção manual consome tempo e torna difícil comparar ciclos que não coincidem exatamente com o mês do calendário. Quando finalmente chega aos gráficos, ainda precisa cruzar abas para descobrir qual categoria ultrapassou o orçamento e quais despesas podem ser reduzidas.
+
+### 2. Questões de refinamento
+
+- Quanto tempo é gasto consolidando e corrigindo os dados antes da análise?
+- Quantas fontes e planilhas são usadas no fechamento de um ciclo?
+- Como os ciclos financeiros são definidos atualmente?
+- Quais indicadores orientam ajustes de metas e orçamento?
+- Quais erros de categorização ou duplicidade ocorrem com mais frequência?
+
+### 3. Refinamento do cenário
+
+> **Implementação futura:** será escrito após a validação das questões de refinamento com usuários representativos.
+
+### 4. Contexto de uso
+
+- Uso principal em quarto ou escritório doméstico, com computador, monitor, teclado e mouse.
+- Ambiente estável, silencioso e bem iluminado.
+- Momento de foco individual, frequentemente nos finais de semana.
+- Sessões mais longas, dedicadas à exploração de gráficos, categorias e metas.
+- Expectativa de visualizar grande volume de informações com clareza e sem lentidão.
+
+### 5. Jornada atual
+
+| Etapa | Ação atual | Pensamento ou emoção |
+| :--- | :--- | :--- |
+| 1. Reúne as fontes | Abre banco, faturas, anotações e planilhas. | Disposição para obter controle. |
+| 2. Consolida lançamentos | Transfere e organiza os dados manualmente. | Concentração, seguida de cansaço. |
+| 3. Corrige inconsistências | Procura compras ausentes, duplicadas ou mal categorizadas. | Frustração e dúvida. |
+| 4. Cruza indicadores | Navega por abas e gráficos para identificar excessos. | Esforço analítico elevado. |
+| 5. Ajusta metas | Decide mudanças para o próximo ciclo com os dados disponíveis. | Alívio parcial, com incerteza sobre a qualidade dos dados. |
+
+```mermaid
+journey
+    title Jornada atual do Analista de Planilhas e Metas
+    section Preparação
+      Reunir banco, faturas e planilhas: 6: Usuário
+      Consolidar lançamentos manualmente: 4: Usuário
+    section Conferência
+      Corrigir ausências e categorias: 3: Usuário
+      Cruzar abas e indicadores: 4: Usuário
+    section Decisão
+      Ajustar metas do próximo ciclo: 6: Usuário
+```
+
+## Persona secundária — O Analógico ou Desapegado Tecnológico
+
+> **Implementação futura:** os dados disponíveis descrevem apenas seu comportamento geral. Cenário, contexto detalhado e jornada serão elaborados depois da pesquisa para não atribuir comportamentos sem evidência.

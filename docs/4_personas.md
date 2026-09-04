@@ -1,55 +1,72 @@
-# Personas
+# Personas e Mapas de Empatia
 
-> **_NOTE:_**: A Persona transforma o Perfil do Usuário (dados reais, agregados) em um arquétipo fictício único, que humaniza o público-alvo e orienta decisões de design. Use o segmento priorizado na etapa anterior como base — não invente características que contradigam a pesquisa.
+> **Status:** versão preliminar baseada nos dados fornecidos pela equipe. Nomes, fotografias, idades exatas e ocupações não foram inventados; serão definidos depois da validação com usuários reais.
 
-- Apresente apenas as personas primárias (o(s) segmento(s) priorizado(s) no Perfil do Usuário). Personas secundárias só se forem realmente necessárias para alguma decisão de design.
-- Para cada persona, apresente: nome, foto de rosto, idade, ocupação, uma frase/citação que resuma sua motivação ou frustração principal, objetivos em relação ao produto/serviço e nível de familiaridade com tecnologia.
-- Toda característica da persona deve ser rastreável aos dados coletados na pesquisa (não adicione traços "porque parece razoável").
-
-> **_NOTE:_**: Cada persona deve ter uma foto de rosto que a represente. Vocês podem utilizar esse [site](https://thispersondoesnotexist.com/) para gerar as fotos.
-
-# Mapa de Empatia
-
-![Mapa de empatia](imagens/empatia.png)
-
-- Determine o mapa de empatia[1] de pelo menos duas personas primárias e uma secundária.
-  - O que o usuário vê: aqui estamos falando do ambiente visual em que o usuário se encontra. Ou seja, o que ele efetivamente enxerga, as pessoas e objetos que estão ao seu redor. Isso ajuda a entender o contexto em que o usuário está inserido e as influências visuais que está recebendo.
-  - O que o usuário ouve: neste quadrante, buscamos entender o que o usuário está ouvindo, os sons que o cercam e como eles influenciam suas ações.
-  - O que o usuário diz e faz: aqui consideramos ações e comportamentos que o usuário apresenta durante sua interação com serviço ou produto.
-  - O que o usuário pensa e sente: neste quadrante, buscamos entender os pensamentos, sentimentos, emoções e percepções que o usuário tem em relação ao serviço ou produto. Quais expectativas o usuário cria sobre o serviço ou produto? Que tipo de serviço ou produto mais agrada essa persona?
-  - Dores: quando falamos sobre dores do usuário, estamos fazendo referência a quaisquer obstáculos, necessidades ou frustrações que o usuário possa experimentar ao tentar realizar uma tarefa ou alcançar um objetivo. Isso inclui, por exemplo, problemas de usabilidade, dificuldades de acesso ou outros desafios que podem afetar a experiência do usuário.
-  - Ganhos: nesse caso estamos falando de quaisquer benefícios ou recompensas que o usuário possa experimentar ao utilizar o serviço ou produto. Isso pode incluir economia de tempo ou facilidade de uso, por exemplo. Que desejos do usuário o serviço ou produto satisfaz?
-
-> **_NOTE:_**: Contexto de Uso e Jornada do Usuário ficam na próxima entrega ([Cenário de Análise/Problema](5_cenarios.md)).
-
----
-
-## Exemplo de entrega
-
-> Continuação do exemplo fictício do app "Estuda+", usando o segmento "Participante" priorizado no [Perfil do Usuário](3_perfil_usuario.md). Copie a estrutura, não o conteúdo.
-
-### Persona primária: Marina Souza
-
-![foto de rosto ilustrativa](imagens/random-person.jpeg)
+## Persona primária 1 — O Jovem Prático e Imediato
 
 | Campo | Descrição |
-| :---- | :---- |
-| **Idade** | 20 anos |
-| **Ocupação** | Estudante de Ciência da Computação (4º semestre), estagiária meio período |
-| **Citação** | "Eu entro no grupo animada, mas depois de duas semanas ninguém mais responde." |
-| **Objetivos** | Manter um grupo de estudo ativo até a prova, sem precisar ser ela quem cobra todo mundo. |
-| **Nível de tecnologia** | Alto — usa smartphone o dia todo, já usa WhatsApp/Discord para grupos de estudo. |
-| **Frustração principal** | Grupos de estudo perdem engajamento depois de 1-2 semanas; ninguém sabe quem devia estudar qual tópico. |
+| :--- | :--- |
+| **Faixa etária** | 18 a 25 anos |
+| **Perfil** | Jovem adulto ou estudante universitário |
+| **Comportamento atual** | Consulta saldos e faturas em aplicativos bancários e usa o bloco de notas do celular para registros cotidianos. |
+| **Objetivo** | Registrar e categorizar lançamentos rapidamente, sem interromper sua rotina. |
+| **Familiaridade tecnológica** | Alta no uso cotidiano de smartphone; prefere interações diretas e curtas. |
+| **Frustração principal** | Esquece pequenos gastos e evita processos manuais demorados ou planilhas complexas. |
+| **Citação-síntese** | “Se eu tiver que abrir vários menus, vou deixar para depois e esquecer.” |
 
-### Mapa de Empatia — Marina
+### Mapa de empatia
 
 | Quadrante | Descrição |
-| :---- | :---- |
-| **Vê** | Grupos de WhatsApp silenciosos, mensagens antigas sem resposta, colegas postando resumos de estudo no Instagram. |
-| **Ouve** | Colegas comentando "vamos criar um grupo pra prova" — que raramente vinga; professor cobrando conteúdo acumulado perto da prova. |
-| **Diz e faz** | Entra em grupos recém-criados com entusiasmo; para de responder quando ninguém mais participa; estuda sozinha nas últimas semanas antes da prova. |
-| **Pensa e sente** | Acha que estudar em grupo ajudaria mais; sente-se culpada por "abandonar" grupos; insegura sobre se está estudando o conteúdo certo. |
-| **Dores** | Falta de clareza sobre quem estuda o quê; ausência de lembretes; grupos que morrem sem ninguém assumir a organização. |
-| **Ganhos** | Divisão automática de tópicos, lembretes de sessão, sensação de progresso visível do grupo. |
+| :--- | :--- |
+| **Vê** | A fatura do cartão aumentando no aplicativo bancário e pequenas anotações desorganizadas no celular. |
+| **Ouve** | Amigos fazendo convites para sair e vídeos curtos nas redes sociais com dicas simples sobre dinheiro. |
+| **Diz e faz** | Reclama que não sabe onde gastou os últimos reais; usa o celular para quase tudo e consulta o saldo com frequência, sem organizar os dados. |
+| **Pensa e sente** | Considera planilhas trabalhosas; sente pressa e quer saber o saldo imediatamente para decidir no dia a dia. |
+| **Dores** | Esquecimento de pequenos gastos, falta de tempo e aversão a preenchimentos complexos. |
+| **Ganhos esperados** | Rapidez, automação e categorização com poucos toques e sem burocracia. |
 
-[1] Fonte: Adaptado de <https://hazeshift.com.br/mapa-de-empatia/>
+## Persona primária 2 — O Analista de Planilhas e Metas
+
+| Campo | Descrição |
+| :--- | :--- |
+| **Faixa etária** | 20 a 30 anos |
+| **Perfil** | Pessoa analítica e focada em controle orçamentário |
+| **Comportamento atual** | Usa Excel, Google Sheets ou dashboards no computador para classificar despesas e acompanhar metas e investimentos. |
+| **Objetivo** | Compreender a evolução financeira, identificar excessos e ajustar metas com segurança. |
+| **Familiaridade tecnológica** | Média a alta; confortável com planilhas, dashboards e grande volume de dados. |
+| **Frustração principal** | Precisa registrar cada compra manualmente e alimentar modelos pouco práticos fora do computador. |
+| **Citação-síntese** | “Quero enxergar qual categoria saiu do orçamento sem cruzar os dados manualmente.” |
+
+### Mapa de empatia
+
+| Quadrante | Descrição |
+| :--- | :--- |
+| **Vê** | Dashboards, várias abas de planilhas e gráficos de ciclos financeiros. |
+| **Ouve** | Podcasts sobre mercado financeiro e discussões sobre investimentos e otimização de rendimentos. |
+| **Diz e faz** | Categoriza despesas fixas e recorrentes com cuidado e conversa sobre metas e evolução patrimonial. |
+| **Pensa e sente** | Sente segurança ao ter controle e previsibilidade; considera aplicativos móveis comuns limitados para análises profundas. |
+| **Dores** | Registro manual repetitivo e lentidão para manter modelos fora do celular. |
+| **Ganhos esperados** | Gráficos claros, ciclos flexíveis e insights acionáveis para otimizar gastos. |
+
+## Persona secundária — O Analógico ou Desapegado Tecnológico
+
+| Campo | Descrição |
+| :--- | :--- |
+| **Faixa etária** | Não definida nos dados disponíveis |
+| **Perfil** | Pessoa de hábitos tradicionais ou com baixa adesão a ferramentas digitais |
+| **Comportamento atual** | Usa papel e caneta ou consulta extrato e fatura no fim do mês somente quando necessário. |
+| **Objetivo** | Receber uma visão resumida da situação financeira com o mínimo de interação. |
+| **Familiaridade tecnológica** | Baixa ou seletiva para ferramentas de organização financeira. |
+| **Frustração principal** | Considera aplicativos e planilhas robóticos, difíceis ou trabalhosos para uma rotina simples. |
+| **Citação-síntese** | “Quero apenas saber se passei do limite, sem precisar alimentar mais um aplicativo.” |
+
+### Mapa de empatia
+
+> **Implementação futura:** o material fornecido não contém dados suficientes sobre o que esta persona vê, ouve, diz, pensa e sente. O mapa será preenchido após a pesquisa, evitando suposições sem evidência.
+
+## Pendências de validação
+
+- Definir nomes, idades, ocupações e imagens representativas após a pesquisa.
+- Confirmar se os três segmentos aparecem entre os participantes e com qual frequência.
+- Validar citações-síntese com falas reais e anonimizadas.
+- Completar o mapa de empatia da persona secundária.

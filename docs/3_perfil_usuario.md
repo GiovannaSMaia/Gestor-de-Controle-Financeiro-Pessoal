@@ -1,56 +1,43 @@
 # Perfil do Usuário
 
-> **_NOTE:_**: Esta entrega consolida e sintetiza os dados coletados na etapa de Pesquisa e Coleta de Dados com Usuários, caracterizando o público-alvo real antes de criar as personas (arquétipos fictícios). Aqui ainda não há personagem — são dados e padrões observados nos participantes reais.
+> **Status:** versão preliminar elaborada a partir dos perfis fornecidos pela equipe. A pesquisa de campo, o tamanho da amostra e as frequências dos achados ainda serão documentados em [Pesquisa e Coleta de Dados com Usuários](2_pesquisa_usuarios.md). Por isso, este capítulo não apresenta percentuais ou quantidades não verificadas.
 
-1) **Perfil Demográfico**
-- Faixa etária, gênero, escolaridade, ocupação, localização geográfica e outros dados demográficos relevantes ao produto/serviço.
+## 1. Perfil demográfico
 
-2) **Perfil Comportamental e Tecnológico**
-- Nível de familiaridade com tecnologia (baixo/médio/alto) e dispositivos mais usados.
-- Frequência e contexto de uso de produtos/serviços similares.
-- Hábitos relevantes para o produto ou serviço em questão.
+O público-alvo preliminar concentra-se em jovens adultos de 18 a 30 anos. Entre eles estão estudantes universitários, pessoas que iniciam a organização da própria vida financeira e usuários com perfil analítico, interessados em orçamento, metas e investimentos.
 
-3) **Necessidades e Dores Consolidadas**
-- Sintetize (não repita bruto) os principais achados da pesquisa: padrões que se repetiram entre os participantes, necessidades não atendidas e frustrações recorrentes.
-- Aponte, para cada necessidade/dor, quantos participantes (aproximadamente) a mencionaram — isso embasa a priorização nas próximas etapas.
+O projeto também considera, como público secundário, pessoas de perfil mais tradicional, que preferem papel e caneta ou consultam extratos apenas pontualmente e possuem baixa adesão a aplicativos financeiros.
 
-4) **Segmentação (se aplicável)**
-- Caso os dados revelem mais de um grupo de usuários com necessidades distintas, descreva cada segmento e o que os diferencia.
-- Indique qual(is) segmento(s) será(ão) priorizado(s) como personas primárias.
+Dados sobre gênero, escolaridade detalhada, ocupação, renda e localização geográfica ainda dependem de pesquisa com usuários e não serão presumidos nesta etapa.
 
----
+## 2. Perfil comportamental e tecnológico
 
-## Exemplo de entrega
+Foram identificados três padrões preliminares:
 
-> Continuação do exemplo fictício do app "Estuda+" (grupos de estudo universitários), consolidando os dados coletados na etapa de pesquisa. Copie a estrutura, não o conteúdo.
+- **Uso prático e imediato:** pessoas que usam principalmente o smartphone, consultam aplicativos bancários e fazem anotações rápidas no bloco de notas. Acompanham saldos e faturas com frequência, mas deixam de registrar pequenos gastos quando o processo exige muitas etapas.
+- **Uso analítico e orientado a metas:** pessoas que organizam despesas fixas, recorrentes e de cartão em Excel, Google Sheets ou dashboards. Valorizam controle, previsibilidade, gráficos e acompanhamento de investimentos, mas enfrentam lentidão e retrabalho no registro manual.
+- **Uso pontual e pouco tecnológico:** pessoas que usam caderno ou consultam extratos e faturas apenas quando necessário. Não mantêm acompanhamento contínuo e percebem aplicativos financeiros como trabalhosos, impessoais ou desnecessários.
 
-### 1) Perfil Demográfico
+## 3. Necessidades e dores consolidadas
 
-- Idade: 18 a 24 anos.
-- Escolaridade: cursando graduação (2º ao 6º semestre).
-- Ocupação: a maioria concilia estudo com estágio ou trabalho meio período (6 de 8 entrevistados).
-- Localização: região metropolitana, moradia com a família ou república estudantil.
+| Necessidade ou dor | Segmentos relacionados | Evidência disponível |
+| :--- | :--- | :--- |
+| Esquecimento de pequenos gastos cotidianos | Prático e imediato | Relato consolidado no material fornecido pela equipe |
+| Excesso de etapas para registrar e categorizar lançamentos | Prático e imediato; analítico | Relato consolidado no material fornecido pela equipe |
+| Informações dispersas entre banco, anotações e planilhas | Prático e imediato; analítico | Comportamentos descritos no material fornecido |
+| Necessidade de gráficos claros e sem poluição visual | Analítico | Expectativa descrita no material fornecido |
+| Necessidade de ciclos financeiros flexíveis e metas | Analítico | Expectativa descrita no material fornecido |
+| Baixa disposição para alimentar sistemas financeiros | Pouco tecnológico | Comportamento descrito no material fornecido |
+| Preferência por alertas e relatórios resumidos | Pouco tecnológico | Expectativa descrita no material fornecido |
 
-### 2) Perfil Comportamental e Tecnológico
+> **Implementação futura:** após a pesquisa, esta tabela deverá incluir a frequência aproximada de cada achado e evidências anonimizadas dos participantes.
 
-- Alta familiaridade com tecnologia: todos usam smartphone diariamente e ao menos um app de mensagens em grupo (WhatsApp ou Discord).
-- Uso de produtos similares: 7 de 8 entrevistados já tentaram organizar grupo de estudo por WhatsApp; nenhum usou um app dedicado a isso.
-- Contexto de uso predominante: à noite, entre aulas, e na semana anterior às provas.
+## 4. Segmentação e priorização
 
-### 3) Necessidades e Dores Consolidadas
+| Segmento | Característica principal | Prioridade |
+| :--- | :--- | :--- |
+| Prático e imediato | Quer registrar e consultar informações em poucos segundos pelo celular | Persona primária |
+| Analítico e orientado a metas | Quer explorar dados, gráficos, ciclos e oportunidades de otimização | Persona primária |
+| Pouco tecnológico | Prefere acompanhamento passivo, simples e eventual | Persona secundária |
 
-| Necessidade/Dor | Frequência aproximada | Evidência |
-| :---- | :---- | :---- |
-| Dificuldade em combinar horário comum entre os membros | 7 de 8 entrevistados | "A gente ficava mandando mensagem por dias até fechar um horário" (E4) |
-| Grupo perde engajamento após 1-2 semanas | 6 de 8 entrevistados | Confirmado também nas respostas do questionário (68% relataram abandono do grupo) |
-| Falta de divisão clara de quem estuda qual tópico | 5 de 8 entrevistados | "Todo mundo estudava a mesma coisa e a gente repetia esforço" (E2) |
-| Preocupação com exposição de dados pessoais em grupos abertos | 3 de 8 entrevistados | Mencionado espontaneamente nas entrevistas |
-
-### 4) Segmentação
-
-Foram identificados dois perfis distintos entre os participantes:
-
-- **Organizador(a)** — toma a iniciativa de criar o grupo e cobrar andamento (2 de 8 entrevistados). Alta motivação, frustra-se com falta de resposta dos demais.
-- **Participante** — entra no grupo já formado, engaja-se enquanto há cobrança externa (6 de 8 entrevistados). Motivação mais dependente do grupo.
-
-Segmento priorizado como persona primária: **Participante**, por representar a maioria do público-alvo e concentrar as dores mais citadas (abandono do grupo, falta de divisão de tópicos).
+Os dois primeiros segmentos são priorizados porque representam os modos de interação que orientarão as principais decisões da interface: agilidade móvel e profundidade analítica. O terceiro segmento será considerado na simplicidade dos resumos e alertas, sem determinar o fluxo principal de entrada de dados.
