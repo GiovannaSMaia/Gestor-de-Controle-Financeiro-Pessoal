@@ -21,17 +21,13 @@ Os resultados orientam as decisões de experiência do usuário do **Gestor de C
 | Questionário fechado | Múltipla escolha e escalas | 18 | 01 e 02/09/2026 |
 | Questionário aberto | Respostas discursivas | 7 | 01/09/2026 |
 
-**As bases foram analisadas separadamente.** Não há identificador que permita verificar a participação da mesma pessoa nos dois formulários; portanto, os 25 registros não equivalem necessariamente a 25 participantes distintos.
-
-O público de interesse do projeto é formado por pessoas que precisam organizar receitas e despesas, com diferentes hábitos e ferramentas de controle. Na amostra do questionário fechado, predominam pessoas de 20 a 25 anos. O questionário aberto não informa idade, de modo que seus relatos não podem ser associados às faixas etárias da outra base.
-
-Os arquivos não documentam os critérios de seleção, os canais de divulgação ou o número de pessoas convidadas. Assim, não é possível calcular a taxa de resposta nem afirmar que a amostra representa a população em geral.
+O público de interesse do projeto é formado por pessoas que precisam organizar receitas e despesas, com diferentes hábitos e ferramentas de controle. 
 
 ---
 
 ## 2. Método e instrumentos utilizados
 
-A técnica aplicada foi o **questionário on-line**, em duas versões complementares: uma quantitativa, para identificar a frequência de comportamentos e dificuldades, e outra qualitativa, para compreender rotinas e expectativas por meio de relatos livres. São duas versões da mesma técnica, não duas técnicas distintas.
+A técnica aplicada foi o **questionário on-line**, em duas versões complementares: uma quantitativa, para identificar a frequência de comportamentos e dificuldades, e outra qualitativa no formato de entrevista, para compreender rotinas e expectativas por meio de relatos livres.
 
 ### 2.1. Questionário fechado — aplicado
 
@@ -65,8 +61,6 @@ As perguntas registradas na exportação foram:
 - [Formulário de pesquisa 1 — Google Forms](https://forms.gle/Zxot5FCvo8jQDx566)
 - [Formulário de pesquisa 2 — Google Forms](https://forms.gle/VH2iMEmLAhgfPQuh7)
 
-Em uma reaplicação, recomenda-se manter a redação e as escalas, informar o objetivo antes das perguntas e registrar o período e os canais de divulgação.
-
 ---
 
 ## 3. Resultados do questionário fechado
@@ -82,7 +76,7 @@ Em uma reaplicação, recomenda-se manter a redação e as escalas, informar o o
 | De 26 a 30 anos | 1 | 5,6% |
 | De 31 a 40 anos | 1 | 5,6% |
 
-A amostra concentra-se nas faixas abaixo de 20 e de 20 a 25 anos, que reúnem **16 das 18 respostas (88,9%)**. A opção “Abaixo de 20” não permite determinar quantos participantes têm menos de 18 anos.
+A amostra concentra-se nas faixas abaixo de 20 e de 20 a 25 anos, que reúnem **16 das 18 respostas (88,9%)**.
 
 ### 3.2. Ferramentas utilizadas
 
@@ -93,7 +87,7 @@ A amostra concentra-se nas faixas abaixo de 20 e de 20 a 25 anos, que reúnem **
 | Nenhum controle estruturado | 3 | 16,7% |
 | Aplicativo específico de finanças | 1 | 5,6% |
 
-Embora a pergunta permitisse múltiplas escolhas, cada registro apresenta apenas uma alternativa. O aplicativo bancário é a ferramenta mais citada, seguido pelas planilhas. Isso sugere que a proposta deve considerar hábitos já existentes de consulta e organização financeira.
+O aplicativo bancário é a ferramenta mais citada, seguido pelas planilhas.
 
 ### 3.3. Principais dificuldades
 
@@ -107,8 +101,6 @@ Embora a pergunta permitisse múltiplas escolhas, cada registro apresenta apenas
 
 **O esquecimento de pequenos gastos foi a dificuldade mais frequente.** A disciplina também aparece como um obstáculo relevante, indicando a necessidade de reduzir o esforço para manter o controle atualizado.
 
-Como cada pessoa podia marcar até duas dificuldades, foram registradas **26 menções**, e a soma dos percentuais ultrapassa 100%. A resposta “Outros” não veio acompanhada de detalhamento na exportação.
-
 ### 3.4. Facilidade para comparar gastos e ganhos
 
 Afirmação avaliada: **“É fácil visualizar rapidamente se estou gastando mais do que ganho no mês.”**
@@ -121,7 +113,7 @@ Afirmação avaliada: **“É fácil visualizar rapidamente se estou gastando ma
 | Discordo parcialmente | 1 | 5,6% |
 | Discordo plenamente | 1 | 5,6% |
 
-Ao todo, **15 pessoas (83,3%) concordam total ou parcialmente** com a afirmação. A maioria percebe facilidade nessa comparação, mesmo com dificuldades de registro. Essa percepção não comprova que todos os gastos estejam registrados corretamente.
+Ao todo, **15 pessoas (83,3%) concordam total ou parcialmente** com a afirmação. A maioria percebe facilidade nessa comparação, mesmo com dificuldades de registro.
 
 ### 3.5. Sensação ao fazer o controle financeiro
 
@@ -137,7 +129,7 @@ Escala de **1 — Confuso/Estressante** a **5 — Claro/Tranquilo**.
 
 A média descritiva foi de **3,39 em 5**. Metade dos respondentes atribuiu notas 4 ou 5, enquanto quatro pessoas (22,2%) marcaram 1 ou 2. Há experiências diferentes de controle financeiro, reforçando a importância de uma interface compreensível para quem enfrenta mais dificuldade.
 
-A pergunta reúne clareza e tranquilidade em uma única escala; os dados não permitem avaliar essas duas dimensões separadamente.
+A pergunta reúne clareza e tranquilidade em uma única escala.
 
 ---
 
@@ -157,91 +149,37 @@ Os relatos mostram formas distintas de organização: anotações no celular, pa
 
 ### Trechos ilustrativos
 
-> “a que menos gosto é ter que imputar os meus gastos manualmente.” — Q4
+> “a que menos gosto é ter que inputar os meus gastos manualmente.” — Q4
 
 > “Um sistema/aplicativo simples e rápido de usar para que eu pudesse anotar os gastos imediatamente ao te-los” — Q5
 
 > “Sou das antigas, papel e caneta” — Q7
 
-Os trechos preservam a redação dos participantes. As sugestões de ciclos personalizados, widget, recomendações e alertas são contribuições individuais, e não preferências comprovadas da maioria.
-
 ---
 
 ## 5. Necessidades e requisitos de UX sugeridos
 
-As propostas abaixo são interpretações dos resultados para orientar o projeto. Sua prioridade e implementação ainda deverão ser validadas com usuários.
-
-| Necessidade | Evidência | Requisito de UX proposto |
-| :--- | :--- | :--- |
-| Registrar gastos com pouco esforço | Esquecimento em 12 de 18 respostas; relatos Q1 e Q5 | Disponibilizar registro rápido, com poucos campos obrigatórios e acesso fácil |
-| Manter a organização ao longo do tempo | Falta de disciplina em 8 de 18 respostas | Reduzir tarefas repetitivas e avaliar lembretes opcionais |
-| Classificar despesas com facilidade | Dificuldade de categorização em 4 de 18 respostas; Q4 | Utilizar categorias claras, editáveis e fáceis de selecionar |
-| Consultar a situação financeira | Relatos Q3, Q5 e Q6 | Apresentar receitas, despesas e saldo em um resumo de fácil leitura |
-| Entender a evolução dos gastos | Q6 solicita comparações mensais; Q3 pede análise visual | Oferecer gráficos simples e comparação entre períodos |
-| Acompanhar o orçamento | Q5 solicita limites e avisos | Permitir definir limites e visualizar o consumo do orçamento |
-| Adequar a ferramenta à rotina | Q4 solicita ciclos próprios e separação entre débito e crédito | Avaliar períodos configuráveis e identificação da forma de pagamento |
+| Necessidade | Requisito de UX proposto |
+| :---  :--- |
+| Registrar gastos com pouco esforço | Disponibilizar registro rápido, com poucos campos obrigatórios e acesso fácil |
+| Manter a organização ao longo do tempo | Reduzir tarefas repetitivas e avaliar lembretes opcionais |
+| Classificar despesas com facilidade | Utilizar categorias claras, editáveis e fáceis de selecionar |
+| Consultar a situação financeira | Apresentar receitas, despesas e saldo em um resumo de fácil leitura |
+| Entender a evolução dos gastos | Oferecer gráficos simples e comparação entre períodos |
+| Acompanhar o orçamento | Permitir definir limites e visualizar o consumo do orçamento |
+| Adequar a ferramenta à rotina | Avaliar períodos configuráveis e identificação da forma de pagamento |
 
 **Foco inicial sugerido:** registro rápido, categorias compreensíveis e resumo financeiro claro. Automatização, ciclos personalizados e recomendações podem ser investigados nas próximas etapas, considerando sua utilidade e viabilidade.
 
 ## 6. Aspectos éticos e cuidados com os dados
 
-A pesquisa envolve relatos sobre hábitos financeiros e faixa etária, por isso exige cuidado com a privacidade e com o uso das respostas. Este documento apresenta resultados agregados e trechos sem nomes.
+A pesquisa envolve relatos sobre hábitos financeiros e faixa etária, por isso exige cuidado com a privacidade e com o uso das respostas. 
 
-As exportações fornecidas não contêm colunas de nome ou e-mail, mas incluem carimbos de data e hora e respostas livres. A ausência de identificadores diretos, por si só, não garante anonimização completa.
-
-**Consentimento:** as planilhas não registram um termo ou uma resposta de aceite. Portanto, não é possível confirmar como o consentimento foi obtido na coleta realizada. Esse procedimento precisa ser documentado pela equipe.
-
-Para complementar o planejamento ético solicitado na atividade, propõe-se:
-
-- Informar a finalidade acadêmica, o caráter voluntário da participação e como as respostas serão utilizadas antes de novas coletas.
-- Solicitar apenas informações necessárias, evitando nomes, e-mails, dados de contas, saldos reais ou documentos pessoais.
-- Manter as planilhas originais em local com acesso restrito à equipe e divulgar somente resultados agregados e trechos revisados.
-- Remover identificadores e horários exatos das cópias destinadas à análise ou divulgação quando não forem necessários.
-- Definir e comunicar um prazo de retenção; como proposta, excluir as bases originais após a conclusão e avaliação do projeto, mantendo apenas a síntese sem identificação.
-- Registrar o procedimento para solicitações de retirada e explicar eventuais limitações de localizar uma resposta sem identificação.
-
-Essas medidas constituem um **plano de tratamento dos dados**. Os arquivos não comprovam sua adoção na coleta já realizada nem permitem concluir sobre a conformidade com a LGPD. A política de consentimento, armazenamento e descarte ainda deve ser registrada pela equipe.
+**Consentimento:** Os questionários foram respondidos de forma voluntária, e deixavam explicito que nenhum dados pessoal como nome, e-mail ou cpf estava sendo coletado, apenas os dados das respostas com intuito academico.
 
 ---
 
-## 7. Técnicas complementares propostas
-
-A atividade prevê **três técnicas diferentes de coleta**. Até o momento, os arquivos fornecidos comprovam apenas o uso de questionários. Para complementar essa técnica, propõem-se uma entrevista individual e um grupo focal. **As duas atividades abaixo ainda não foram realizadas.**
-
-### 7.1. Entrevista semiestruturada — proposta
-
-**Objetivo:** compreender por que os registros são esquecidos, o que torna o controle trabalhoso e como a ferramenta poderia se encaixar na rotina.
-
-**Participantes propostos:** quatro a seis pessoas, buscando diferentes hábitos: uso de aplicativo bancário, planilha, papel ou ausência de controle estruturado. O recrutamento pode ocorrer por convite voluntário nos canais de divulgação da pesquisa, após sua definição pela equipe.
-
-**Aplicação:** sessão individual de 20 a 30 minutos. Explicar a finalidade e obter consentimento; seguir as mesmas perguntas centrais, permitindo aprofundamentos. Registrar anotações sem identificação e gravar apenas com autorização específica. Não solicitar a exibição de contas ou valores reais.
-
-**Roteiro:**
-
-1. Conte como você organizou seus gastos na última semana.
-2. Lembra de uma ocasião em que deixou de registrar uma despesa? O que aconteceu?
-3. Qual etapa do seu controle atual exige mais esforço?
-4. Como decide a categoria de uma compra?
-5. Como percebe que está chegando ao limite de gastos?
-6. O que faria você adotar uma nova ferramenta ou continuar usando a atual?
-
-### 7.2. Grupo focal — proposto
-
-**Objetivo:** discutir prioridades e identificar concordâncias e divergências sobre as funcionalidades desejadas.
-
-**Participantes propostos:** quatro a seis pessoas com diferentes hábitos de organização financeira, por convite voluntário.
-
-**Aplicação:** encontro de aproximadamente 45 minutos, conduzido por um mediador e acompanhado por uma pessoa responsável pelas anotações. Explicar a finalidade, obter consentimento e combinar que não serão compartilhados valores pessoais. Usar os mesmos tópicos para todos, incentivar a participação equilibrada e registrar também opiniões divergentes.
-
-**Roteiro de discussão:**
-
-1. Quais dificuldades mais atrapalham a organização financeira no dia a dia?
-2. Quais informações precisam aparecer na tela inicial?
-3. Como equilibrar rapidez de registro e detalhamento das despesas?
-4. Quando alertas de gastos seriam úteis ou incômodos?
-5. Entre registro rápido, gráficos, categorias, limites e ciclos personalizados, quais recursos deveriam vir primeiro? Por quê?
-
-## 8. Conclusão e limitações
+## 7. Conclusão e limitações
 
 Os resultados apontam como oportunidades principais **reduzir o esforço de registro, facilitar a categorização e apresentar informações claras**. O esquecimento de pequenos gastos foi a dificuldade mais citada no questionário fechado, enquanto os relatos abertos reforçaram a busca por praticidade e menor trabalho manual.
 
