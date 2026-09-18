@@ -1,77 +1,83 @@
 # Análise de Tarefas
 
-> **_NOTE:_**: Enquanto o Cenário de Análise/Problema descreve a situação em prosa, a Análise de Tarefas modela formalmente como o usuário executa as funcionalidades mais importantes da interface/produto. Isso alimenta diretamente a Arquitetura de Informação e o Fluxo do Usuário na próxima etapa.
+### HTA 1 — Registrar um lançamento financeiro rápido
 
-A equipe deve modelar pelo menos **1 HTA e 1 GOMS**, cobrindo ao menos **4 funcionalidades diferentes** entre os dois modelos. Cada diagrama/tabela deve vir acompanhado de um texto explicando a funcionalidade modelada.
-
-1) **HTA (Hierarchical Task Analysis)**
-- Decomponha a tarefa em objetivo principal → subtarefas → operações, em uma estrutura hierárquica (árvore).
-- Todo nó que tiver mais de um filho deve trazer, dentro da própria caixa, o **plano de execução** referenciando os filhos pelo número local (1, 2, 3...): `>` sequência (ex.: `1>2` = faça 1, depois 2), `+` simultâneo/sem ordem definida (ex.: `1+2` = faça 1 e 2, em qualquer ordem), `/` alternativa (ex.: `1/2` = faça 1 ou 2, não ambos). Quando o plano não se encaixar nesses três casos (ex.: repetição), descreva-o em prosa dentro da caixa.
-
-2) **GOMS (Goals, Operators, Methods, Selection Rules)**
-
-Escreva como um esboço textual hierárquico (não em tabela), no formato:
-
-- `GOAL n`: o objetivo (pode ser decomposto em subgoals `GOAL n.1`, `GOAL n.2`...).
-- `METHOD n.X`: um dos métodos possíveis para atingir o goal acima, identificado por uma letra (`A`, `B`, `C`...).
-- `(SEL. RULE: ...)`: logo abaixo de cada METHOD, entre parênteses — a condição que leva o usuário a escolher esse método em vez de outro. Só existe quando há mais de um método para o mesmo goal.
-- `OP. n.X.k`: os operadores (ações atômicas — clique, digitação, gesto, verificação visual) que compõem o método, numerados em sequência.
-
----
-
-## Exemplo de entrega
-
-> Continuação do exemplo fictício do app "Estuda+". Copie a estrutura, não o conteúdo.
-
-### HTA — Criar um grupo de estudo
-
-**Funcionalidade**: permitir que um aluno crie um novo grupo de estudo e convide colegas, definindo os tópicos a dividir.
-
-> O plano fica escrito dentro da própria caixa do nó pai, logo abaixo da descrição da tarefa.
+**Funcionalidade:** Permitir que o usuário insira rapidamente uma nova despesa ou receita pelo celular, com o mínimo de toques possíveis.
 
 ```mermaid
 graph TD
-    A["0. Criar grupo de estudo<br/>1>2>3"] --> B["1. Definir dados do grupo<br/>1+2"]
-    A --> C["2. Convidar colegas<br/>1>2"]
-    A --> D["3. Dividir tópicos<br/>1, depois repetir 2 para cada tópico pendente"]
-    B --> B1["1.1 Inserir nome do grupo"]
-    B --> B2["1.2 Escolher disciplina/prova"]
-    C --> C1["2.1 Gerar link de convite"]
-    C --> C2["2.2 Compartilhar link<br/>1/2"]
-    C2 --> C2a["2.2.1 Compartilhar via WhatsApp"]
-    C2 --> C2b["2.2.2 Copiar link manualmente"]
-    D --> D1["3.1 Listar tópicos da prova"]
-    D --> D2["3.2 Atribuir tópico a cada membro"]
+    A["0. Registrar lançamento rápido<br/>1>2"] --> B["1. Inserir dados do gasto<br/>1+2"]
+    A --> C["2. Confirmar registro"]
+    B --> B1["1.1 Digitar valor numérico"]
+    B --> B2["1.2 Selecionar categoria visual"]
+```
+* Plano 0 (1>2): Inserir os dados básicos do gasto e, somente depois, confirmar o registro para envio ao sistema.
+* Plano 1 (1+2): O valor numérico e o ícone de categoria podem ser informados no formulário em qualquer ordem.
+
+### HTA 2 — Analisar ciclo financeiro customizado
+
+Funcionalidade: Permitir que o usuário configure filtros específicos de datas e categorias para visualizar gráficos consolidados do seu ciclo financeiro e, se desejar, exportá-los.
+
+```mermaid
+graph TD
+    A["0. Analisar ciclo financeiro customizado<br/>1>2>3"] --> B["1. Acessar tela de relatórios"]
+    A --> C["2. Configurar parâmetros de busca<br/>1+2"]
+    A --> D["3. Consumir os dados gerados<br/>1/2"]
+    C --> C1["2.1 Definir período (datas de início e fim)"]
+    C --> C2["2.2 Filtrar por categoria específica"]
+    D --> D1["3.1 Visualizar gráficos interativos na tela"]
+    D --> D2["3.2 Exportar dados para planilha"]
 ```
 
-- **Plano 0 (`1>2>3`)**: definir os dados do grupo, depois convidar colegas, depois dividir os tópicos — nessa ordem.
-- **Plano 1 (`1+2`)**: nome do grupo e disciplina/prova são preenchidos no mesmo formulário, em qualquer ordem.
-- **Plano 2 (`1>2`)**: só é possível compartilhar o link depois de gerá-lo.
-- **Plano 2.2 (`1/2`)**: o organizador escolhe **um** dos dois canais — WhatsApp ou copiar o link manualmente — nunca os dois.
-- **Plano 3 (`1>2`)**: lista os tópicos da prova e depois atribui responsável para cada tópico pendente.
+* Plano 0 (1>2>3): Acessar a tela, em seguida configurar os parâmetros de busca e, por fim, consumir os dados gerados — rigorosamente nessa ordem.
+* Plano 2 (1+2): O usuário pode definir as datas e filtrar as categorias no painel em qualquer ordem antes de gerar o relatório.
+* Plano 3 (1/2): O usuário escolhe uma das opções de consumo: ou visualiza os gráficos na interface, ou clica para exportar os dados (não faz os dois simultaneamente como parte da mesma operação final).
 
-### GOMS — Marcar um tópico como estudado
+### GOMS 1 — Editar a categoria de um gasto registrado
 
-**Funcionalidade**: permitir que o participante registre que concluiu o estudo de um tópico atribuído a ele.
+Funcionalidade: Permitir que o usuário corrija a categorização de uma despesa lançada erroneamente, garantindo a integridade dos relatórios.
 
+```text
+GOAL 0: alterar a categoria de um lançamento financeiro incorreto
+
+  GOAL 1: localizar o lançamento financeiro
+
+    METHOD 1.A: encontrar via extrato da tela inicial
+    (SEL. RULE: o gasto foi registrado muito recentemente e ainda aparece nos últimos lançamentos)
+      OP. 1.A.1: rolar a tela inicial até a seção "Lançamentos Recentes"
+      OP. 1.A.2: identificar visualmente o lançamento desejado
+      OP. 1.A.3: tocar/clicar no lançamento
+
+    METHOD 1.B: buscar pelo histórico detalhado
+    (SEL. RULE: o gasto é mais antigo ou precisa ser buscado pelo nome)
+      OP. 1.B.1: tocar/clicar no menu "Extrato Completo"
+      OP. 1.B.2: digitar o nome do estabelecimento na barra de busca
+      OP. 1.B.3: tocar/clicar no lançamento encontrado nos resultados
+
+  GOAL 2: editar e salvar a nova categoria
+    METHOD 2.A: substituir a categoria atual
+      OP. 2.A.1: tocar/clicar no botão "Editar"
+      OP. 2.A.2: selecionar a nova categoria na lista suspensa
+      OP. 2.A.3: tocar/clicar no botão "Salvar"
 ```
-GOAL 0: marcar o tópico "Grafos" como estudado
+### GOMS 2 — Consultar limite disponível do orçamento
 
-  GOAL 1: chegar até a tela do tópico "Grafos"
+Funcionalidade: Permitir que o usuário consulte rapidamente quanto dinheiro ainda resta para gastar no mês, seja no Limite Mensal ou em uma categoria específica.
 
-    METHOD 1.A: navegar pela aba "Meu grupo"
-    (SEL. RULE: app está na tela inicial, sem notificação pendente)
-      OP. 1.A.1: tocar na aba "Meu grupo"
-      OP. 1.A.2: localizar o tópico "Grafos" na lista
-      OP. 1.A.3: tocar no tópico "Grafos"
+```text
+GOAL 0: consultar o limite disponível do orçamento do mês
 
-    METHOD 1.B: acessar direto pela notificação
-    (SEL. RULE: existe notificação de lembrete para o tópico "Grafos")
-      OP. 1.B.1: tocar na notificação do lembrete
-      OP. 1.B.2: aguardar a tela do tópico abrir
+  GOAL 1: acessar a visão de orçamentos e limites
 
-  GOAL 2: confirmar a conclusão do tópico
-    METHOD 2.A: marcar como concluído
-      OP. 2.A.1: tocar no botão "Concluí"
-      OP. 2.A.2: confirmar na caixa de diálogo
+    METHOD 1.A: visualização rápida pelo dashboard principal
+    (SEL. RULE: o usuário quer apenas saber o Limite Mensal restante)
+      OP. 1.A.1: abrir o aplicativo
+      OP. 1.A.2: verificar o gráfico de "Limite Mensal" no topo da tela inicial
+
+    METHOD 1.B: visualização detalhada por categoria
+    (SEL. RULE: o usuário quer saber quanto ainda pode gastar em uma categoria específica)
+      OP. 1.B.1: abrir o aplicativo
+      OP. 1.B.2: tocar/clicar na aba "Metas e Orçamentos" no menu inferior
+      OP. 1.B.3: rolar a tela até a categoria desejada (ex: Alimentação)
+      OP. 1.B.4: verificar o valor numérico de saldo disponível exibido
 ```
