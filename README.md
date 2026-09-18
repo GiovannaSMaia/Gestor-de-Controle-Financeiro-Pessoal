@@ -35,7 +35,11 @@ O público principal é formado por jovens adultos de 18 a 30 anos, incluindo es
 
 ### Tecnologias e ferramentas
 
-> **Implementação futura:** as tecnologias serão definidas após a validação dos requisitos, da arquitetura de informação e dos protótipos.
+Interface implementada em **React** com **Vite**, reproduzindo o [protótipo de alta fidelidade](https://doge-bottom-60575002.figma.site/). As fontes Inter e Outfit são carregadas localmente.
+
+Para executar, use `npm install` e `npm run dev` na raiz do projeto (ou `npm.cmd` no PowerShell). Para gerar a versão de produção, execute `npm run build`.
+
+Consulte a [implementação final em React](docs/14_implementacao_react.md) para instruções, estrutura e limites dos dados demonstrativos.
 
 ### Contexto de uso
 
@@ -60,7 +64,8 @@ O sistema deverá considerar dois contextos principais: uso rápido em smartphon
 ### Prototipação
 
 - [Prototipação em Papel](docs/9_prototipacao_papel.md) — implementação futura
-- [Prototipação de Alta Fidelidade (Figma)](docs/10_prototipacao_figma.md) — implementação futura
+- [Prototipação de Alta Fidelidade (Figma)](docs/10_prototipacao_figma.md)
+- [Implementação final em React](docs/14_implementacao_react.md)
 
 ### Avaliação
 
