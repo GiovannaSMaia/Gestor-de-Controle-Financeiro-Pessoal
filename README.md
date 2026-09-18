@@ -45,11 +45,11 @@ O sistema deverá considerar dois contextos principais: uso rápido em smartphon
 
 ### Descoberta
 
-- [Análise de Concorrência](docs/1_concorrencia.md) — implementação futura
-- [Pesquisa e Coleta de Dados com Usuários](docs/2_pesquisa_usuarios.md) — implementação futura
-- [Perfil do Usuário](docs/3_perfil_usuario.md) — versão preliminar
-- [Personas](docs/4_personas.md) — versão preliminar
-- [Cenário de Análise/Problema](docs/5_cenarios.md) — versão preliminar
+- [Análise de Concorrência](docs/1_concorrencia.md) 
+- [Pesquisa e Coleta de Dados com Usuários](docs/2_pesquisa_usuarios.md) 
+- [Perfil do Usuário](docs/3_perfil_usuario.md)
+- [Personas](docs/4_personas.md) 
+- [Cenário de Análise/Problema](docs/5_cenarios.md) 
 
 ### Definição
 
