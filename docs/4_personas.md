@@ -60,13 +60,3 @@
 | **Frustração principal** | Considera aplicativos e planilhas robóticos, difíceis ou trabalhosos para uma rotina simples. |
 | **Citação-síntese** | “Quero apenas saber se passei do limite, sem precisar alimentar mais um aplicativo.” |
 
-### Mapa de empatia
-
-> **Implementação futura:** o material fornecido não contém dados suficientes sobre o que esta persona vê, ouve, diz, pensa e sente. O mapa será preenchido após a pesquisa, evitando suposições sem evidência.
-
-## Pendências de validação
-
-- Definir nomes, idades, ocupações e imagens representativas após a pesquisa.
-- Confirmar se os três segmentos aparecem entre os participantes e com qual frequência.
-- Validar citações-síntese com falas reais e anonimizadas.
-- Completar o mapa de empatia da persona secundária.
