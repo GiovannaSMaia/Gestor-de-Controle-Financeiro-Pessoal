@@ -1,8 +1,18 @@
-# Prototipação em Papel (Lo-fi)
+﻿# Prototipação em Papel (Lo-fi)
 
-> **_NOTE:_**: Protótipo de baixa fidelidade, usado para validar rapidamente a arquitetura de informação e os fluxos definidos na etapa anterior, antes de investir em alta fidelidade.
+O protótipo foi desenhado em papel para organizar as principais telas do Gestor de Controle Financeiro Pessoal antes da criação da versão digital.
 
-1. Esboce (à mão ou em ferramenta simples) as principais telas identificadas na Arquitetura de Informação.
-2. Cubra pelo menos os fluxos de usuário mapeados na etapa anterior.
-3. Anexe fotos/imagens dos esboços.
-4. Relate brevemente feedbacks obtidos ao apresentar o protótipo em papel para outras pessoas (colegas, potenciais usuários).
+Foram representadas três telas:
+
+- **Início:** saldo em conta, novo gasto, geração de relatório e últimas despesas.
+- **Extrato:** consulta das despesas registradas.
+- **Metas e configurações:** ciclo personalizado e limites de gastos.
+
+*Contribuições para o desenvolvimento*
+A prototipação em papel estabeleceu uma referência visual para a continuidade do projeto. As três telas representadas servem como base para detalhar os componentes da interface e desenvolver um protótipo digital interativo. Com a aceitação positiva registrada, a estrutura proposta poderá orientar essa evolução, sendo refinada conforme as necessidades identificadas nas próximas avaliações.
+
+Todas as avaliações recebidas foram positivas, indicando uma boa aceitação da proposta. O esboço servirá como base para o desenvolvimento das telas digitais.
+
+![Protótipo em papel com as três telas do sistema](imagens/prototipo-papel.jpeg)
+
+*Figura 1 – Protótipo em papel do sistema. Fonte: elaboração própria (2026).*
