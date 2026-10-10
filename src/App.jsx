@@ -1,6 +1,6 @@
 import React from 'react';
 
-// === 1. VARIÁVEIS E DADOS DO PROTÓTIPO (MANTIDOS) ===
+// VARIÁVEIS E DADOS DO PROTÓTIPO
 const colors = {
   bg: `#F7F5FF`,
   surface: `#FFFFFF`,
@@ -40,7 +40,7 @@ const budgets = [
 
 const formatCurrency = e => new Intl.NumberFormat(`pt-BR`, { style: `currency`, currency: `BRL` }).format(e);
 
-// === 2. ÍCONES E COMPONENTES MENORES (MANTIDOS) ===
+// ÍCONES E COMPONENTES MENORES
 function HomeIcon({ active: e }) { return <svg width={22} height={22} viewBox={`0 0 24 24`} fill={e ? colors.primary : `none`} stroke={e ? colors.primary : colors.text2} strokeWidth={`1.8`} strokeLinecap={`round`} strokeLinejoin={`round`}><path d={`M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z`} /><polyline points={`9 22 9 12 15 12 15 22`} /></svg>; }
 function StatementIcon({ active: e }) { return <svg width={22} height={22} viewBox={`0 0 24 24`} fill={`none`} stroke={e ? colors.primary : colors.text2} strokeWidth={`1.8`} strokeLinecap={`round`} strokeLinejoin={`round`}><line x1={`8`} y1={`6`} x2={`21`} y2={`6`} /><line x1={`8`} y1={`12`} x2={`21`} y2={`12`} /><line x1={`8`} y1={`18`} x2={`21`} y2={`18`} /><line x1={`3`} y1={`6`} x2={`3.01`} y2={`6`} /><line x1={`3`} y1={`12`} x2={`3.01`} y2={`12`} /><line x1={`3`} y1={`18`} x2={`3.01`} y2={`18`} /></svg>; }
 function GoalIcon({ active: e }) { return <svg width={22} height={22} viewBox={`0 0 24 24`} fill={`none`} stroke={e ? colors.primary : colors.text2} strokeWidth={`1.8`} strokeLinecap={`round`} strokeLinejoin={`round`}><circle cx={`12`} cy={`12`} r={`10`} /><circle cx={`12`} cy={`12`} r={`6`} /><circle cx={`12`} cy={`12`} r={`2`} /></svg>; }
@@ -65,7 +65,6 @@ function Logo() {
 function BottomNavigation({ active: e, onChange: t }) {
   return (
     <div className="nav-content">
-      {/* Logotipo visível apenas no Desktop */}
       <div className="nav-logo">
           <Logo />
       </div>
@@ -88,9 +87,8 @@ function BottomNavigation({ active: e, onChange: t }) {
 }
 
 
-// === 3. TELAS (SCREENS) DO APLICATIVO ===
+// TELAS DO APLICATIVO 
 
-// 3.1 Tela Inicial (REFATORADA COM HTML SEMÂNTICO)
 function HomeScreen({ onNovoLancamento }) {
   let gastoAtual = 1850, metaMensal = 3000;
   return (
@@ -145,7 +143,7 @@ function HomeScreen({ onNovoLancamento }) {
   );
 }
 
-// 3.2 Outras telas mantidas do original
+
 function NewTransactionScreen({ onBack: e }) {
   let [t, n] = React.useState(`25,00`), [r, i] = React.useState(null), [a, o] = React.useState(!1);
   return a ? <div style={{ flex: 1, display: `flex`, flexDirection: `column`, alignItems: `center`, justifyContent: `center`, gap: 16, padding: 32 }}><div style={{ width: 72, height: 72, borderRadius: `50%`, background: colors.primaryLight, display: `flex`, alignItems: `center`, justifyContent: `center`, fontSize: 36 }}>{`✅`}</div><p style={{ fontFamily: `Outfit`, fontWeight: 700, fontSize: 20, color: colors.text, textAlign: `center` }}>{`Gasto registrado!`}</p><p style={{ fontSize: 13, color: colors.text2, textAlign: `center` }}>{`-R$ `}{t}{` em `}{r}</p><button onClick={e} style={{ marginTop: 16, background: colors.primary, color: `#FFF`, border: `none`, borderRadius: 12, padding: `14px 32px`, fontFamily: `Outfit`, fontWeight: 700, fontSize: 15, cursor: `pointer` }}>{`Voltar ao Início`}</button></div> : <div style={{ flex: 1, overflow: `auto`, display: `flex`, flexDirection: `column` }}><div style={{ padding: `16px 20px 0`, display: `flex`, alignItems: `center`, gap: 8 }}><button onClick={e} style={{ background: `none`, border: `none`, cursor: `pointer`, padding: 4 }}><BackIcon /></button><p style={{ fontFamily: `Outfit`, fontWeight: 700, fontSize: 16, color: colors.text }}>{`Novo Lançamento`}</p></div><div style={{ flex: 1, display: `flex`, flexDirection: `column`, padding: `32px 24px 24px`, gap: 32 }}><div style={{ textAlign: `center` }}><p style={{ fontSize: 13, color: colors.text2, marginBottom: 8 }}>{`Valor do gasto`}</p><div style={{ display: `flex`, alignItems: `center`, justifyContent: `center`, gap: 4 }}><span style={{ fontFamily: `Outfit`, fontWeight: 500, fontSize: 22, color: colors.text2 }}>{`R$`}</span><input value={t} onChange={e => n(e.target.value)} style={{ fontFamily: `Outfit`, fontWeight: 800, fontSize: 42, color: colors.text, background: `none`, border: `none`, outline: `none`, textAlign: `center`, width: 200, letterSpacing: `-0.02em` }} /></div><div style={{ height: 2, background: colors.primary, borderRadius: 1, width: 120, margin: `8px auto 0` }} /></div><div><p style={{ fontFamily: `Outfit`, fontWeight: 600, fontSize: 13, color: colors.text2, marginBottom: 12 }}>{`Selecione a Categoria:`}</p><div style={{ display: `grid`, gridTemplateColumns: `1fr 1fr`, gap: 10 }}>{categories.map(e => { let t = r === e; return <button onClick={() => i(e)} style={{ padding: `18px 12px`, borderRadius: 14, border: `2px solid ${t ? colors.primary : colors.border}`, background: t ? colors.primaryLight : colors.surface, cursor: `pointer`, display: `flex`, flexDirection: `column`, alignItems: `center`, gap: 6, transition: `all 0.15s` }} key={e}><span style={{ fontSize: 22 }}>{categoryEmoji[e]}</span><span style={{ fontFamily: `Outfit`, fontWeight: 600, fontSize: 13, color: t ? colors.primary : colors.text }}>{e}</span></button>; })}</div></div><div><p style={{ fontFamily: `Outfit`, fontWeight: 600, fontSize: 13, color: colors.text2, marginBottom: 8 }}>{`Observação (opcional)`}</p><input placeholder={`Ex: almoço com cliente`} style={{ width: `100%`, padding: `12px 14px`, borderRadius: 12, border: `1px solid ${colors.border}`, background: colors.surface, fontFamily: `Inter`, fontSize: 13, color: colors.text, outline: `none` }} /></div><button onClick={() => { r && o(!0); }} style={{ marginTop: `auto`, background: r ? colors.primary : colors.border, color: r ? `#FFF` : colors.text2, border: `none`, borderRadius: 16, padding: `18px`, fontFamily: `Outfit`, fontWeight: 700, fontSize: 16, cursor: r ? `pointer` : `default`, transition: `all 0.2s` }}>{`Confirmar Gasto`}</button></div></div>;
@@ -166,7 +164,7 @@ function SettingsScreen() {
 }
 
 
-// === 4. COMPONENTE PRINCIPAL APP (REFATORADO) ===
+// COMPONENTE PRINCIPAL APP 
 function App() {
   let [activeTab, setActiveTab] = React.useState('inicio');
   
