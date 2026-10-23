@@ -1,6 +1,6 @@
 # Código React
 
-Interface fiel ao protótipo de alta fidelidade, implementada em React com Vite.
+Interface baseada no protótipo de média fidelidade no Figma, implementada em React com Vite. O protótipo de alta fidelidade em HTML, CSS e JavaScript está em `public/prototipo-alta-fidelidade/`.
 
 Execute `npm install` e `npm run dev` na raiz do repositório.
 

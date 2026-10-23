@@ -1,6 +1,6 @@
 # Implementação final em React
 
-A interface foi reproduzida a partir do [protótipo de alta fidelidade](https://doge-bottom-60575002.figma.site/), preservando os componentes publicados, cores, textos, ícones, dimensões e interações. O código da interface foi convertido para JSX editável; a aplicação utiliza React e Vite, sem depender do site do Figma para executar.
+A interface foi reproduzida a partir do [protótipo de média fidelidade no Figma](https://doge-bottom-60575002.figma.site/), preservando os componentes publicados, cores, textos, ícones, dimensões e interações. O código da interface foi convertido para JSX editável; a aplicação utiliza React e Vite, sem depender do site do Figma para executar. A [alta fidelidade em HTML, CSS e JavaScript](10_prototipacao_figma.md) é uma entrega independente, com seu próprio escopo de interações.
 
 ## Telas
 

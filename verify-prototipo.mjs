@@ -1,0 +1,50 @@
+import { chromium } from '@playwright/test';
+import assert from 'node:assert/strict';
+import { pathToFileURL } from 'node:url';
+import fs from 'node:fs/promises';
+
+const browser = await chromium.launch({ channel: 'msedge', headless: true });
+try {
+  const page = await browser.newPage({ viewport: { width: 1280, height: 960 } });
+  const errors = [];
+  page.on('pageerror', error => errors.push(error.message));
+  await page.goto(pathToFileURL(`${process.cwd()}/public/prototipo-alta-fidelidade/index.html`).href);
+  await page.locator('#recent-expense-cards > div').first().waitFor();
+  await page.waitForFunction(() => getComputedStyle(document.querySelector('#tab-extratos')).display === 'none');
+  await page.evaluate(() => openModal());
+  await page.locator('#tx-desc').fill('Almoço de teste');
+  await page.locator('#tx-amount').fill('25');
+  await page.locator('#transaction-form button[type=submit]').click();
+  await page.evaluate(() => switchTab('extratos'));
+  await page.locator('#search-input').fill('Almoço de teste');
+  assert.equal(await page.locator('#full-extratos-list > div').count(), 1);
+  await page.evaluate(() => setFilter('receita'));
+  assert.match(await page.locator('#full-extratos-list').innerText(), /Nenhum lançamento/);
+  await page.evaluate(() => setFilter('todos'));
+  await page.getByRole('button', { name: 'Excluir lançamento' }).click();
+  assert.match(await page.locator('#full-extratos-list').innerText(), /Nenhum lançamento/);
+  await page.evaluate(() => { switchTab('metas'); openGoalModal(); });
+  await page.locator('#goal-title').fill('Reserva de teste');
+  await page.locator('#goal-target').fill('1000');
+  await page.locator('#goal-current').fill('250');
+  await page.locator('#goal-form button[type=submit]').click();
+  assert.match(await page.locator('#goals-grid').innerText(), /25%/);
+  await page.evaluate(() => { switchTab('ajustes'); toggleDarkMode(); });
+  assert.equal(await page.locator('html').evaluate(el => el.classList.contains('dark')), true);
+  page.once('dialog', dialog => dialog.accept('4500,50'));
+  await page.getByRole('button', { name: 'Editar Meta', exact: true }).click();
+  assert.match(await page.locator('#monthly-target-label').textContent(), /4\.500,50/);
+  await page.evaluate(() => { monthlyTarget = 3000; renderAll(); });
+  await page.evaluate(() => { toggleDarkMode(); switchTab('inicio'); });
+  await fs.mkdir('docs/verificacao/alta-fidelidade', { recursive: true });
+  await page.screenshot({ path: 'docs/verificacao/alta-fidelidade/desktop.png', fullPage: true });
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.locator('#mob-extratos').click();
+  await page.locator('#mob-inicio').click();
+  assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
+  await page.screenshot({ path: 'docs/verificacao/alta-fidelidade/mobile.png', fullPage: true });
+  assert.deepEqual(errors, []);
+  console.log('Protótipo: lançamento, busca, filtros, exclusão, metas, tema e navegação móvel OK; sem erros JavaScript.');
+} finally {
+  await browser.close();
+}

@@ -35,7 +35,7 @@ O público principal é formado por jovens adultos de 18 a 30 anos, incluindo es
 
 ### Tecnologias e ferramentas
 
-Interface implementada em **React** com **Vite**, reproduzindo o [protótipo de alta fidelidade](https://doge-bottom-60575002.figma.site/). As fontes Inter e Outfit são carregadas localmente.
+Interface final implementada em **React** com **Vite**, com referência no [protótipo de média fidelidade no Figma](https://doge-bottom-60575002.figma.site/). A [alta fidelidade em HTML, CSS e JavaScript](public/prototipo-alta-fidelidade/index.html) é uma entrega independente. As fontes Inter e Outfit da aplicação React são carregadas localmente.
 
 Para executar, use `npm install` e `npm run dev` na raiz do projeto (ou `npm.cmd` no PowerShell). Para gerar a versão de produção, execute `npm run build`.
 
@@ -76,7 +76,7 @@ O sistema deverá considerar dois contextos principais: uso rápido em smartphon
 ### Prototipação
 
 - [Prototipação em Papel](docs/9_prototipacao_papel.md) — implementação futura
-- [Prototipação de Alta Fidelidade (Figma)](docs/10_prototipacao_figma.md)
+- [Média Fidelidade (Figma) e Alta Fidelidade (HTML, CSS e JavaScript)](docs/10_prototipacao_figma.md)
 - [Implementação final em React](docs/14_implementacao_react.md)
 
 ### Avaliação

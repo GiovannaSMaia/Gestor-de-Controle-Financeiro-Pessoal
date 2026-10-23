@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protótipo de Alta Fidelidade | Gestor Financeiro</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./tema.js"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body class="bg-brand-50 dark:bg-darkBg text-brand-900 dark:text-gray-100 min-h-full flex flex-col transition-colors duration-200 pb-24 md:pb-6">
+
+    <!-- DESKTOP TOP HEADER / MOBILE COMPACT BAR -->
+    <header class="sticky top-0 z-40 bg-white/90 dark:bg-darkCard/90 backdrop-blur-md border-b border-brand-300/60 dark:border-darkBorder shadow-sm">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6">
+            <div class="flex items-center justify-between h-16">
+                
+                <!-- Logo & Brand -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-2xl bg-brand-500 flex items-center justify-center text-white shadow-md shadow-brand-500/30">
+                        <i class="fa-solid fa-wallet text-lg"></i>
+                    </div>
+                    <div>
+                        <span class="text-xl font-extrabold text-brand-900 dark:text-white tracking-tight">FinanApp</span>
+                        <span class="hidden sm:inline-block text-xs font-semibold text-brand-500 ml-2">Controle Financeiro</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex space-x-1">
+                    <button onclick="switchTab('inicio')" id="nav-inicio" class="nav-btn px-4 py-2 rounded-xl text-sm font-bold text-brand-500 bg-brand-100 dark:bg-brand-500/20 transition-all flex items-center gap-2">
+                        <i class="fa-solid fa-house"></i> Início
+                    </button>
+                    <button onclick="switchTab('extratos')" id="nav-extratos" class="nav-btn px-4 py-2 rounded-xl text-sm font-semibold text-gray-600 dark:text-gray-300 hover:text-brand-500 hover:bg-brand-100/50 dark:hover:bg-gray-800 transition-all flex items-center gap-2">
+                        <i class="fa-solid fa-list-ul"></i> Extratos
+                    </button>
+                    <button onclick="switchTab('metas')" id="nav-metas" class="nav-btn px-4 py-2 rounded-xl text-sm font-semibold text-gray-600 dark:text-gray-300 hover:text-brand-500 hover:bg-brand-100/50 dark:hover:bg-gray-800 transition-all flex items-center gap-2">
+                        <i class="fa-solid fa-bullseye"></i> Metas
+                    </button>
+                    <button onclick="switchTab('ajustes')" id="nav-ajustes" class="nav-btn px-4 py-2 rounded-xl text-sm font-semibold text-gray-600 dark:text-gray-300 hover:text-brand-500 hover:bg-brand-100/50 dark:hover:bg-gray-800 transition-all flex items-center gap-2">
+                        <i class="fa-solid fa-gear"></i> Ajustes
+                    </button>
+                </nav>
+
+                <!-- Actions: Dark Mode Toggle & User Avatar -->
+                <div class="flex items-center space-x-3">
+                    <button id="theme-toggle" onclick="toggleDarkMode()" class="w-10 h-10 rounded-2xl bg-brand-100 dark:bg-gray-800 text-brand-500 dark:text-amber-400 flex items-center justify-center hover:bg-brand-200 dark:hover:bg-gray-700 transition-colors">
+                        <i id="theme-icon" class="fa-solid fa-moon text-base"></i>
+                    </button>
+
+                    <div class="flex items-center pl-2 border-l border-brand-300 dark:border-gray-800">
+                        <img class="h-10 w-10 rounded-2xl ring-2 ring-brand-500/30 object-cover" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150" alt="Lucas" onerror="this.src='https://placehold.co/100x100/7F22FE/ffffff?text=L'">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTAINER -->
+    <main class="flex-grow max-w-5xl w-full mx-auto px-4 sm:px-6 py-6 space-y-6">
+
+        <!-- TAB 1: INÍCIO / DASHBOARD DESIGN -->
+        <section id="tab-inicio" class="tab-content space-y-6">
+            
+            <!-- Greeting & Cycle Status -->
+            <div class="flex items-center justify-between">
+                <div>
+                    <h1 class="text-2xl font-extrabold text-brand-900 dark:text-white flex items-center gap-2">
+                        Olá, Lucas <span class="text-xl">👋</span>
+                    </h1>
+                    <p class="text-xs font-semibold text-gray-500 dark:text-gray-400 mt-0.5">Setembro 2026 · Ciclo ativo</p>
+                </div>
+            </div>
+
+            <!-- MAIN HERO BALANCE CARD (#7F22FE) -->
+            <div class="bg-brand-500 text-white p-6 rounded-3xl shadow-xl shadow-brand-500/25 relative overflow-hidden transition-all hover:shadow-2xl hover:shadow-brand-500/30">
+                <div class="relative z-10 space-y-3">
+                    <span class="text-xs font-bold uppercase tracking-wide text-brand-100/90">Saldo Restante no Ciclo</span>
+                    <h2 id="hero-balance" class="text-4xl sm:text-5xl font-extrabold tracking-tight">R$ 1.850,00</h2>
+                    
+                    <!-- Progress bar inside hero card -->
+                    <div class="pt-3 space-y-1.5">
+                        <div class="flex justify-between text-xs font-semibold text-brand-100">
+                            <span id="monthly-target-label">Meta mensal: R$ 3.000,00</span>
+                            <span id="hero-percentage">62%</span>
+                        </div>
+                        <div class="w-full bg-white/20 h-2.5 rounded-full overflow-hidden backdrop-blur-sm">
+                            <div id="hero-progress-bar" class="bg-white h-full rounded-full transition-all duration-700" style="width: 62%;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Abstract Decorative Shapes in Card Background -->
+                <div class="absolute -right-8 -bottom-12 w-48 h-48 bg-white/10 rounded-full blur-2xl pointer-events-none"></div>
+                <div class="absolute -right-4 -top-8 w-32 h-32 bg-brand-400/30 rounded-full blur-xl pointer-events-none"></div>
+            </div>
+
+            <!-- QUICK ACTION CARDS (2 COLUMNS) -->
+            <div class="grid grid-cols-2 gap-4">
+                <!-- Novo gasto -->
+                <button onclick="openModal('despesa')" class="bg-brand-200 dark:bg-darkCard hover:bg-brand-300/60 dark:hover:bg-gray-800 p-5 rounded-3xl border border-brand-300 dark:border-darkBorder transition-all text-left group shadow-sm flex flex-col justify-between h-28">
+                    <div class="w-9 h-9 rounded-2xl bg-white dark:bg-brand-500/20 text-brand-500 flex items-center justify-center text-lg shadow-sm group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-plus font-extrabold"></i>
+                    </div>
+                    <span class="font-extrabold text-sm sm:text-base text-brand-500 dark:text-brand-400">Novo gasto</span>
+                </button>
+
+                <!-- Ver relatório -->
+                <button onclick="switchTab('relatorio')" class="bg-brand-200 dark:bg-darkCard hover:bg-brand-300/60 dark:hover:bg-gray-800 p-5 rounded-3xl border border-brand-300 dark:border-darkBorder transition-all text-left group shadow-sm flex flex-col justify-between h-28">
+                    <div class="w-9 h-9 rounded-2xl bg-white dark:bg-brand-500/20 flex items-center justify-center text-lg shadow-sm group-hover:scale-110 transition-transform">
+                        <span class="text-base">📊</span>
+                    </div>
+                    <span class="font-extrabold text-sm sm:text-base text-brand-900 dark:text-white">Ver relatório</span>
+                </button>
+            </div>
+
+            <!-- LATEST TRANSACTIONS SECTION -->
+            <div class="space-y-3 pt-2">
+                <div class="flex items-center justify-between">
+                    <h3 class="text-base font-extrabold text-brand-900 dark:text-white tracking-tight">Últimas Despesas</h3>
+                    <button onclick="switchTab('extratos')" class="text-xs font-extrabold text-brand-500 hover:underline">Ver todas</button>
+                </div>
+
+                <!-- Transaction List Items (Card Style matching UI image) -->
+                <div id="recent-expense-cards" class="space-y-3">
+                    <!-- Dynamic Expense Items Inserted Here -->
+                </div>
+            </div>
+
+        </section>
+
+        <!-- TAB 2: EXTRATOS (FULL TRANSACTIONS) -->
+        <section id="tab-extratos" class="tab-content hidden space-y-6">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div>
+                    <h1 class="text-2xl font-extrabold text-brand-900 dark:text-white">Extrato Detalhado</h1>
+                    <p class="text-xs font-semibold text-gray-500 dark:text-gray-400">Histórico completo de entradas e saídas.</p>
+                </div>
+                <button onclick="openModal('receita')" class="bg-brand-500 hover:bg-brand-600 text-white px-4 py-2.5 rounded-2xl text-xs font-bold shadow-md shadow-brand-500/20 transition-all flex items-center gap-2 self-start sm:self-auto">
+                    <i class="fa-solid fa-plus"></i> Adicionar Receita
+                </button>
+            </div>
+
+            <!-- Search & Filters Bar -->
+            <div class="bg-white dark:bg-darkCard p-4 rounded-3xl border border-brand-300 dark:border-darkBorder shadow-sm flex flex-col sm:flex-row gap-3 items-center justify-between">
+                <div class="relative w-full sm:w-72">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3 text-gray-400 text-xs"></i>
+                    <input type="text" id="search-input" aria-label="Buscar lançamentos" oninput="renderExtratos()" placeholder="Buscar lançamentos..." class="w-full pl-9 pr-4 py-2 bg-brand-50 dark:bg-gray-800 border border-brand-300 dark:border-gray-700 rounded-2xl text-xs font-medium focus:ring-2 focus:ring-brand-500 focus:outline-none text-brand-900 dark:text-white">
+                </div>
+                <div class="flex items-center gap-2 w-full sm:w-auto overflow-x-auto pb-1 sm:pb-0">
+                    <button onclick="setFilter('todos')" id="filter-todos" class="px-3.5 py-1.5 rounded-xl text-xs font-bold bg-brand-500 text-white transition-all">Todos</button>
+                    <button onclick="setFilter('despesa')" id="filter-despesa" class="px-3.5 py-1.5 rounded-xl text-xs font-bold bg-brand-100 dark:bg-gray-800 text-brand-900 dark:text-gray-300 hover:bg-brand-200 transition-all">Despesas</button>
+                    <button onclick="setFilter('receita')" id="filter-receita" class="px-3.5 py-1.5 rounded-xl text-xs font-bold bg-brand-100 dark:bg-gray-800 text-brand-900 dark:text-gray-300 hover:bg-brand-200 transition-all">Receitas</button>
+                </div>
+            </div>
+
+            <!-- Full Transactions List -->
+            <div id="full-extratos-list" class="space-y-3">
+                <!-- Dynamic Extrato Cards -->
+            </div>
+        </section>
+
+        <!-- TAB 3: METAS -->
+        <section id="tab-metas" class="tab-content hidden space-y-6">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div>
+                    <h1 class="text-2xl font-extrabold text-brand-900 dark:text-white">Metas e Economias</h1>
+                    <p class="text-xs font-semibold text-gray-500 dark:text-gray-400">Acompanhe o avanço dos seus objetivos financeiros.</p>
+                </div>
+                <button onclick="openGoalModal()" class="bg-brand-500 hover:bg-brand-600 text-white px-4 py-2.5 rounded-2xl text-xs font-bold shadow-md transition-all flex items-center gap-2 self-start sm:self-auto">
+                    <i class="fa-solid fa-plus"></i> Criar Nova Meta
+                </button>
+            </div>
+
+            <!-- Goals Grid -->
+            <div id="goals-grid" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- Dynamic Goals Inserted Here -->
+            </div>
+        </section>
+
+        <!-- TAB 4: RELATÓRIO & CHARTS -->
+        <section id="tab-relatorio" class="tab-content hidden space-y-6">
+            <div>
+                <h1 class="text-2xl font-extrabold text-brand-900 dark:text-white">Relatório Financeiro</h1>
+                <p class="text-xs font-semibold text-gray-500 dark:text-gray-400">Análise detalhada de gastos por categoria e fluxo de caixa.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <!-- Chart 1: Cash Flow -->
+                <div class="bg-white dark:bg-darkCard p-5 rounded-3xl border border-brand-300 dark:border-darkBorder shadow-sm space-y-4">
+                    <h3 class="text-sm font-extrabold text-brand-900 dark:text-white">Evolução Mensal</h3>
+                    <div class="relative w-full h-64">
+                        <canvas id="cashFlowChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Chart 2: Category Breakdown -->
+                <div class="bg-white dark:bg-darkCard p-5 rounded-3xl border border-brand-300 dark:border-darkBorder shadow-sm space-y-4">
+                    <h3 class="text-sm font-extrabold text-brand-900 dark:text-white">Distribuição por Categoria</h3>
+                    <div class="relative w-full h-64 flex items-center justify-center">
+                        <canvas id="categoryDoughnutChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 5: AJUSTES -->
+        <section id="tab-ajustes" class="tab-content hidden space-y-6">
+            <div>
+                <h1 class="text-2xl font-extrabold text-brand-900 dark:text-white">Ajustes & Perfil</h1>
+                <p class="text-xs font-semibold text-gray-500 dark:text-gray-400">Configurações da sua conta FinanApp.</p>
+            </div>
+
+            <div class="bg-white dark:bg-darkCard rounded-3xl border border-brand-300 dark:border-darkBorder p-6 space-y-6 shadow-sm">
+                <div class="flex items-center space-x-4">
+                    <img class="h-16 w-16 rounded-3xl ring-4 ring-brand-500/20 object-cover" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150" alt="Lucas">
+                    <div>
+                        <h3 class="text-lg font-extrabold text-brand-900 dark:text-white">Lucas Silva</h3>
+                        <p class="text-xs font-medium text-gray-400">lucas.silva@exemplo.com</p>
+                    </div>
+                </div>
+
+                <div class="pt-4 border-t border-brand-200 dark:border-gray-800 space-y-4">
+                    <div class="flex items-center justify-between py-2">
+                        <div>
+                            <p class="text-sm font-bold text-brand-900 dark:text-white">Modo Escuro</p>
+                            <p class="text-xs text-gray-400">Alternar tema da interface</p>
+                        </div>
+                        <button onclick="toggleDarkMode()" class="px-4 py-2 rounded-2xl bg-brand-100 dark:bg-gray-800 text-xs font-bold text-brand-500">
+                            Alternar Tema
+                        </button>
+                    </div>
+
+                    <div class="flex items-center justify-between py-2 border-t border-brand-200 dark:border-gray-800">
+                        <div>
+                            <p class="text-sm font-bold text-brand-900 dark:text-white">Meta Mensal do Ciclo</p>
+                            <p class="text-xs text-gray-400">Defina o limite total de orçamento</p>
+                        </div>
+                        <button onclick="changeMonthlyTarget()" class="px-4 py-2 rounded-2xl bg-brand-500 text-white text-xs font-bold">
+                            Editar Meta
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FLOATING MOBILE BOTTOM NAVIGATION BAR -->
+    <div class="fixed bottom-0 left-0 right-0 z-40 bg-white/95 dark:bg-darkCard/95 backdrop-blur-md border-t border-brand-300/60 dark:border-darkBorder md:hidden px-4 py-2">
+        <div class="max-w-md mx-auto flex items-center justify-between relative">
+            
+            <button onclick="switchTab('inicio')" id="mob-inicio" class="flex flex-col items-center justify-center w-16 py-1 text-brand-500 font-extrabold">
+                <i class="fa-solid fa-house text-lg"></i>
+                <span class="text-[10px] mt-1">Início</span>
+            </button>
+
+            <button onclick="switchTab('extratos')" id="mob-extratos" class="flex flex-col items-center justify-center w-16 py-1 text-gray-400 font-medium hover:text-brand-500">
+                <i class="fa-solid fa-list-ul text-lg"></i>
+                <span class="text-[10px] mt-1">Extratos</span>
+            </button>
+
+            <!-- FLOATING PURPLE (+) ACTION BUTTON -->
+            <div class="relative -top-5 flex justify-center">
+                <button onclick="openModal('despesa')" class="w-14 h-14 rounded-full bg-brand-500 text-white flex items-center justify-center text-2xl shadow-lg shadow-brand-500/50 hover:scale-105 active:scale-95 transition-all">
+                    <i class="fa-solid fa-plus font-extrabold"></i>
+                </button>
+            </div>
+
+            <button onclick="switchTab('metas')" id="mob-metas" class="flex flex-col items-center justify-center w-16 py-1 text-gray-400 font-medium hover:text-brand-500">
+                <i class="fa-solid fa-bullseye text-lg"></i>
+                <span class="text-[10px] mt-1">Metas</span>
+            </button>
+
+            <button onclick="switchTab('ajustes')" id="mob-ajustes" class="flex flex-col items-center justify-center w-16 py-1 text-gray-400 font-medium hover:text-brand-500">
+                <i class="fa-solid fa-gear text-lg"></i>
+                <span class="text-[10px] mt-1">Ajustes</span>
+            </button>
+
+        </div>
+    </div>
+
+    <!-- MODAL: NOVA TRANSAÇÃO / NOVO GASTO -->
+    <div id="transaction-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" class="fixed inset-0 z-50 hidden bg-brand-900/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white dark:bg-darkCard w-full max-w-md rounded-3xl shadow-2xl border border-brand-300 dark:border-darkBorder overflow-hidden">
+            <div class="px-6 py-4 border-b border-brand-200 dark:border-darkBorder flex justify-between items-center">
+                <h3 id="modal-title" class="text-base font-extrabold text-brand-900 dark:text-white flex items-center gap-2">
+                    <i class="fa-solid fa-circle-plus text-brand-500"></i> Novo Gasto
+                </h3>
+                <button onclick="closeModal()" class="text-gray-400 hover:text-brand-900 dark:hover:text-white text-lg">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <form id="transaction-form" onsubmit="handleFormSubmit(event)" class="p-6 space-y-4">
+                <input type="hidden" id="tx-type" value="despesa">
+
+                <!-- Type Selector -->
+                <div class="grid grid-cols-2 gap-2 p-1 bg-brand-100 dark:bg-gray-800 rounded-2xl">
+                    <button type="button" id="btn-modal-despesa" onclick="setModalType('despesa')" class="py-2 text-xs font-extrabold rounded-xl bg-brand-500 text-white shadow-sm">
+                        Despesa
+                    </button>
+                    <button type="button" id="btn-modal-receita" onclick="setModalType('receita')" class="py-2 text-xs font-extrabold rounded-xl text-brand-900 dark:text-gray-300">
+                        Receita
+                    </button>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-brand-900 dark:text-gray-300 mb-1">Descrição</label>
+                    <input type="text" id="tx-desc" required placeholder="Ex: Supermercado, Cafeteria..." class="w-full px-3.5 py-2.5 bg-brand-50 dark:bg-gray-800 border border-brand-300 dark:border-gray-700 rounded-2xl text-xs font-semibold focus:ring-2 focus:ring-brand-500 focus:outline-none text-brand-900 dark:text-white">
+                </div>
+
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label class="block text-xs font-bold text-brand-900 dark:text-gray-300 mb-1">Valor (R$)</label>
+                        <input type="number" step="0.01" min="0.01" id="tx-amount" required placeholder="142,50" class="w-full px-3.5 py-2.5 bg-brand-50 dark:bg-gray-800 border border-brand-300 dark:border-gray-700 rounded-2xl text-xs font-semibold focus:ring-2 focus:ring-brand-500 focus:outline-none text-brand-900 dark:text-white">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-brand-900 dark:text-gray-300 mb-1">Categoria</label>
+                        <select id="tx-category" class="w-full px-3.5 py-2.5 bg-brand-50 dark:bg-gray-800 border border-brand-300 dark:border-gray-700 rounded-2xl text-xs font-semibold focus:ring-2 focus:ring-brand-500 focus:outline-none text-brand-900 dark:text-white">
+                            <option value="Alimentação">Alimentação</option>
+                            <option value="Supermercado">Supermercado</option>
+                            <option value="Transporte">Transporte</option>
+                            <option value="Lazer">Lazer</option>
+                            <option value="Salário">Salário</option>
+                            <option value="Outros">Outros</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="pt-2 flex gap-3">
+                    <button type="button" onclick="closeModal()" class="w-1/2 py-3 rounded-2xl border border-brand-300 dark:border-gray-700 text-xs font-bold text-gray-600 dark:text-gray-300 hover:bg-brand-50 transition-colors">Cancelar</button>
+                    <button type="submit" class="w-1/2 py-3 rounded-2xl bg-brand-500 hover:bg-brand-600 text-white text-xs font-extrabold shadow-md shadow-brand-500/20 transition-colors">Salvar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL: NOVA META -->
+    <div id="goal-modal" role="dialog" aria-modal="true" aria-label="Nova meta" class="fixed inset-0 z-50 hidden bg-brand-900/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white dark:bg-darkCard w-full max-w-md rounded-3xl shadow-2xl border border-brand-300 dark:border-darkBorder overflow-hidden">
+            <div class="px-6 py-4 border-b border-brand-200 dark:border-darkBorder flex justify-between items-center">
+                <h3 class="text-base font-extrabold text-brand-900 dark:text-white flex items-center gap-2">
+                    <i class="fa-solid fa-bullseye text-brand-500"></i> Nova Meta
+                </h3>
+                <button onclick="closeGoalModal()" class="text-gray-400 hover:text-brand-900 text-lg">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <form id="goal-form" onsubmit="handleGoalSubmit(event)" class="p-6 space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-brand-900 dark:text-gray-300 mb-1">Título da Meta</label>
+                    <input type="text" id="goal-title" required placeholder="Ex: Reserva, Viagem..." class="w-full px-3.5 py-2.5 bg-brand-50 dark:bg-gray-800 border border-brand-300 dark:border-gray-700 rounded-2xl text-xs font-semibold focus:ring-2 focus:ring-brand-500 focus:outline-none text-brand-900 dark:text-white">
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label class="block text-xs font-bold text-brand-900 dark:text-gray-300 mb-1">Valor Alvo (R$)</label>
+                        <input type="number" step="0.01" min="1" id="goal-target" required placeholder="3000,00" class="w-full px-3.5 py-2.5 bg-brand-50 dark:bg-gray-800 border border-brand-300 dark:border-gray-700 rounded-2xl text-xs font-semibold focus:ring-2 focus:ring-brand-500 focus:outline-none text-brand-900 dark:text-white">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-brand-900 dark:text-gray-300 mb-1">Acumulado (R$)</label>
+                        <input type="number" step="0.01" min="0" id="goal-current" required placeholder="500,00" class="w-full px-3.5 py-2.5 bg-brand-50 dark:bg-gray-800 border border-brand-300 dark:border-gray-700 rounded-2xl text-xs font-semibold focus:ring-2 focus:ring-brand-500 focus:outline-none text-brand-900 dark:text-white">
+                    </div>
+                </div>
+                <div class="pt-2 flex gap-3">
+                    <button type="button" onclick="closeGoalModal()" class="w-1/2 py-3 rounded-2xl border border-brand-300 dark:border-gray-700 text-xs font-bold text-gray-600 dark:text-gray-300 hover:bg-brand-50 transition-colors">Cancelar</button>
+                    <button type="submit" class="w-1/2 py-3 rounded-2xl bg-brand-500 hover:bg-brand-600 text-white text-xs font-extrabold shadow-md transition-colors">Salvar Meta</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- APP SCRIPT LOGIC -->
+    <script src="./app.js"></script>
+</body>
+</html>
