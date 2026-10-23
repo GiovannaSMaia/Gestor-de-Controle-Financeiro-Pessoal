@@ -41,6 +41,18 @@ Para executar, use `npm install` e `npm run dev` na raiz do projeto (ou `npm.cmd
 
 Consulte a [implementação final em React](docs/14_implementacao_react.md) para instruções, estrutura e limites dos dados demonstrativos.
 
+### Publicação no GitHub Pages
+
+O arquivo `vite.config.js` configura o caminho `/Gestor-de-Controle-Financeiro-Pessoal/` usado pelo site no GitHub Pages, incluindo os arquivos JavaScript, CSS e fontes.
+
+1. No repositório do GitHub, acesse **Settings → Pages** e selecione **GitHub Actions** em **Build and deployment → Source**.
+2. Envie estas alterações para a branch `main`. O workflow `.github/workflows/deploy.yml` instala as dependências, gera o build e publica somente a pasta `dist/`. Também é possível iniciá-lo manualmente pela aba **Actions** usando **Run workflow**.
+3. Aguarde o workflow **Publicar no GitHub Pages** concluir e acesse [o site publicado](https://giovannasmaia.github.io/Gestor-de-Controle-Financeiro-Pessoal/).
+
+Para conferir o build localmente, execute `npm run build` e `npm run preview`, depois abra `http://127.0.0.1:4173/Gestor-de-Controle-Financeiro-Pessoal/`. No PowerShell, use `npm.cmd` se necessário.
+
+A pasta `dist/` é gerada automaticamente e permanece fora do controle de versão. Publicar o `index.html` da raiz diretamente resulta em tela branca, pois ele referencia o código JSX de desenvolvimento, que precisa ser compilado pelo Vite.
+
 ### Contexto de uso
 
 O sistema deverá considerar dois contextos principais: uso rápido em smartphone, em movimento e sujeito a distrações; e uso analítico em computador, em ambiente estável e com maior tempo de atenção. Também deverá oferecer resumos simples e passivos para usuários com baixa interação tecnológica.
