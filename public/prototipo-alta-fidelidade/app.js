@@ -15,8 +15,30 @@
         let activeFilter = 'todos';
         let cashChart = null;
         let categoryChart = null;
+        let modalTrigger = null;
+
+        function showDialog(id, inputId) {
+            modalTrigger = document.activeElement;
+            document.getElementById(id).classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            document.getElementById(inputId).focus();
+        }
+
+        function hideDialog(id) {
+            const dialog = document.getElementById(id);
+            if (dialog.classList.contains('hidden')) return;
+            dialog.classList.add('hidden');
+            document.body.style.overflow = '';
+            modalTrigger?.focus();
+        }
 
         window.onload = function() {
+            document.querySelectorAll('input[type="text"]').forEach(input => {
+                input.addEventListener('input', () => input.setCustomValidity(''));
+            });
+            document.querySelectorAll('[role="dialog"] button').forEach(button => {
+                if (!button.textContent.trim()) button.setAttribute('aria-label', 'Fechar janela');
+            });
             renderAll();
             if (typeof Chart !== 'undefined') {
                 initCharts();
@@ -28,9 +50,23 @@
             });
             document.getElementById('theme-toggle').setAttribute('aria-label', 'Alternar tema');
             document.addEventListener('keydown', event => {
+                const dialog = document.querySelector('[role="dialog"]:not(.hidden)');
+                if (!dialog) return;
                 if (event.key === 'Escape') {
                     closeModal();
                     closeGoalModal();
+                }
+                if (event.key === 'Tab') {
+                    const controls = [...dialog.querySelectorAll('button, input:not([type="hidden"]), select')];
+                    const first = controls[0];
+                    const last = controls[controls.length - 1];
+                    if (event.shiftKey && document.activeElement === first) {
+                        event.preventDefault();
+                        last.focus();
+                    } else if (!event.shiftKey && document.activeElement === last) {
+                        event.preventDefault();
+                        first.focus();
+                    }
                 }
             });
         };
@@ -207,12 +243,13 @@
         // MODAL CONTROLS
         function openModal(type = 'despesa') {
             setModalType(type);
-            document.getElementById('transaction-modal').classList.remove('hidden');
+            showDialog('transaction-modal', 'tx-desc');
         }
 
         function closeModal() {
-            document.getElementById('transaction-modal').classList.add('hidden');
+            hideDialog('transaction-modal');
             document.getElementById('transaction-form').reset();
+            document.getElementById('tx-desc').setCustomValidity('');
         }
 
         function setModalType(type) {
@@ -231,7 +268,10 @@
 
         function handleFormSubmit(e) {
             e.preventDefault();
-            const desc = document.getElementById('tx-desc').value;
+            const descriptionInput = document.getElementById('tx-desc');
+            const desc = descriptionInput.value.trim();
+            descriptionInput.setCustomValidity(desc ? '' : 'Informe uma descrição.');
+            if (!document.getElementById('transaction-form').reportValidity()) return;
             const amt = parseFloat(document.getElementById('tx-amount').value);
             const cat = document.getElementById('tx-category').value;
             const type = document.getElementById('tx-type').value;
@@ -255,17 +295,21 @@
         }
 
         function openGoalModal() {
-            document.getElementById('goal-modal').classList.remove('hidden');
+            showDialog('goal-modal', 'goal-title');
         }
 
         function closeGoalModal() {
-            document.getElementById('goal-modal').classList.add('hidden');
+            hideDialog('goal-modal');
             document.getElementById('goal-form').reset();
+            document.getElementById('goal-title').setCustomValidity('');
         }
 
         function handleGoalSubmit(e) {
             e.preventDefault();
-            const title = document.getElementById('goal-title').value;
+            const titleInput = document.getElementById('goal-title');
+            const title = titleInput.value.trim();
+            titleInput.setCustomValidity(title ? '' : 'Informe um título para a meta.');
+            if (!document.getElementById('goal-form').reportValidity()) return;
             const target = parseFloat(document.getElementById('goal-target').value);
             const current = parseFloat(document.getElementById('goal-current').value);
 

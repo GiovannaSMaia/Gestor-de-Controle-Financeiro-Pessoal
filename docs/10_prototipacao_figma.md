@@ -2,6 +2,12 @@
 
 ## Evolução dos protótipos
 
+### Registro da conclusão desta etapa
+
+A alta fidelidade foi concluída e documentada após o início da implementação final em React. Trata-se de uma formalização retrospectiva da etapa: a ordem da tabela abaixo representa o processo de projeto previsto, e não a cronologia dos commits. A entrega permite demonstrar e avaliar as interações com dados fictícios em HTML, CSS e JavaScript, separadamente da aplicação final.
+
+Os arquivos oficiais desta entrega estão em `public/prototipo-alta-fidelidade/`. Os arquivos `prototype.html`, `prototype.css` e `prototype.js` na raiz são referências anteriores; para apresentação e avaliação, utilize a versão indicada nesta página.
+
 | Etapa | Entrega | Finalidade |
 | --- | --- | --- |
 | Baixa fidelidade | [Protótipo em papel](9_prototipacao_papel.md) | Explorar a organização das telas. |
@@ -45,7 +51,11 @@ O Vite copia esses arquivos de `public/` para `dist/`, disponibilizando o protó
 
 ## Verificação
 
+Os formulários impedem valores inválidos e títulos ou descrições compostos apenas por espaços. As janelas recebem o foco ao abrir, mantêm a navegação por Tab em seus controles, fecham com Escape e devolvem o foco ao botão de origem. Cancelar não adiciona dados. O cenário inicial contém R$ 3.000,00 de receitas e R$ 190,40 de despesas, resultando em saldo de R$ 2.809,60; após o almoço de R$ 25,00 do roteiro, o saldo esperado é R$ 2.784,60.
+
 Execute `node verify-prototipo.mjs` com Microsoft Edge instalado e acesso à internet. A verificação cobre cadastro, busca, filtros, exclusão, criação de meta, alteração de orçamento, tema e navegação móvel. Capturas: [desktop](verificacao/alta-fidelidade/desktop.png) e [celular](verificacao/alta-fidelidade/mobile.png).
+
+Para conferir a distribuição junto da aplicação final, execute `npm run build`: o resultado deve conter `dist/prototipo-alta-fidelidade/index.html`, `styles.css`, `tema.js` e `app.js`. As verificações técnicas não substituem os testes de usabilidade com participantes descritos nas etapas de avaliação.
 
 ## Limites da simulação
 
