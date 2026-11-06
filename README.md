@@ -1,86 +1,100 @@
-# Gestor de Controle Financeiro Pessoal
+﻿# Gestor de Controle Financeiro Pessoal
 
-Projeto apresentado ao Centro Universitário [FEI](https://portal.fei.edu.br/), como parte dos requisitos necessários para aprovação na disciplina de Experiência do Usuário (CCP310) do curso de Ciência da Computação, orientado pelo Prof. Dr. [Fagner de Assis Moura Pimentel](http://lattes.cnpq.br/6747210702910392).
+Projeto apresentado ao Centro Universitário [FEI](https://portal.fei.edu.br/), como parte dos requisitos para aprovação na disciplina de Experiência do Usuário (CCP310) do curso de Ciência da Computação, orientado pelo Prof. Dr. [Fagner de Assis Moura Pimentel](http://lattes.cnpq.br/6747210702910392).
 
-Este projeto é desenvolvido por:
+Desenvolvido por:
 
 - Giovanna Stofel Maia
 - Gabriel Matos Lourenço
 - Vitoria Emanuelly Machado Costa
 
-
 ## Conhecendo o problema
 
-O projeto propõe um gestor de controle financeiro pessoal voltado a pessoas que precisam acompanhar receitas, despesas, orçamento e metas sem o atrito das planilhas tradicionais.
+O projeto propõe um gestor financeiro pessoal para acompanhar despesas, orçamento e metas com menos esforço de registro e consulta. O objetivo é apoiar tanto registros rápidos no celular quanto o acompanhamento de informações no computador.
 
-O objetivo é facilitar o registro e a compreensão da vida financeira, conciliando duas necessidades principais: rapidez para quem registra gastos em movimento e profundidade de análise para quem acompanha categorias, ciclos e metas com mais atenção.
+O público principal é formado por jovens adultos e pessoas interessadas em organizar suas finanças. Pessoas que preferem ferramentas tradicionais também são consideradas na pesquisa.
 
-O público principal é formado por jovens adultos de 18 a 30 anos, incluindo estudantes universitários e pessoas com perfil analítico de controle orçamentário. Como público secundário, o projeto considera pessoas com baixa familiaridade ou pouco interesse em ferramentas financeiras digitais.
+Os benefícios esperados são reduzir o esquecimento de gastos, facilitar a categorização e tornar as informações financeiras compreensíveis. O React permite registrar despesas, consultar o histórico e tratar pendências fictícias durante a sessão. Há limitações e dados demonstrativos descritos na documentação do projeto.
 
-### Benefícios esperados
+O contexto de uso inclui consultas rápidas no smartphone, sujeitas a distrações, e acompanhamento no computador com maior tempo de atenção.
 
-- Reduzir o esforço necessário para registrar pequenos gastos.
-- Centralizar informações financeiras que hoje ficam dispersas entre aplicativos bancários, anotações e planilhas.
-- Oferecer visualizações claras para apoiar decisões e metas financeiras.
-- Atender tanto interações rápidas no celular quanto análises detalhadas no computador.
+## Estrutura
 
-### Funcionalidades previstas
+```text
+├── docs/                                  Documentação do trabalho
+├── src/
+│   ├── .vscode/                           Configuração local do editor
+│   ├── .gitignore                         Regras para arquivos gerados
+│   ├── dist/                              Build anterior, ignorado pelo Git
+│   ├── projeto/                           Projeto React e configuração Vite
+│   │   ├── node_modules/                  Dependências locais, ignoradas pelo Git
+│   │   ├── dist/                          Build atual, ignorado pelo Git
+│   │   ├── public/fonts/
+│   │   ├── App.jsx
+│   │   ├── main.jsx
+│   │   ├── styles.css
+│   │   ├── index.html
+│   │   ├── package.json
+│   │   ├── package-lock.json
+│   │   ├── vite.config.js
+│   │   └── verify-ui.mjs
+│   └── README.md
+└── README.md
+```
 
-> **Status:** implementação futura. A lista será validada e refinada nas próximas etapas do projeto.
+As configurações do editor, dependências, builds e regras de exclusão ficam dentro de `src/`. Somente os metadados `.git/` e o workflow `.github/` permanecem na raiz por serem estruturas do Git e do GitHub. Dependências e builds são ignorados pelas regras de `src/.gitignore`. O diretório `src/dist/` preserva o build anterior à reorganização; novos builds são gerados em `src/projeto/dist/`.
 
-- Registro e categorização rápida de receitas e despesas.
-- Visão consolidada de saldo, orçamento e lançamentos.
-- Metas e alertas de orçamento.
-- Resumos automáticos e insights de apoio à decisão.
+O React é a referência atual do projeto. A média fidelidade está no [Figma](https://doge-bottom-60575002.figma.site/). As [fontes tipográficas do React](src/projeto/public/fonts/FONTES.md) estão documentadas separadamente.
 
-### Tecnologias e ferramentas
+## Executar o projeto React
 
-Interface final implementada em **React** com **Vite**, com referência no [protótipo de média fidelidade no Figma](https://doge-bottom-60575002.figma.site/). A [alta fidelidade em HTML, CSS e JavaScript](public/prototipo-alta-fidelidade/index.html) é uma entrega independente. As fontes Inter e Outfit da aplicação React são carregadas localmente.
+Com Node.js 22.12 ou superior:
 
-Para executar, use `npm install` e `npm run dev` na raiz do projeto (ou `npm.cmd` no PowerShell). Para gerar a versão de produção, execute `npm run build`.
+```sh
+cd src/projeto
+npm install
+npm run dev
+```
 
-Consulte a [implementação final em React](docs/14_implementacao_react.md) para instruções, estrutura e limites dos dados demonstrativos.
+No PowerShell, use `npm.cmd` se necessário. Abra `http://127.0.0.1:5173/Gestor-de-Controle-Financeiro-Pessoal/`.
 
-### Publicação no GitHub Pages
+Para gerar produção, execute `npm run build` dentro de `src/projeto/`. Para conferir o resultado, execute `npm run preview` e abra `http://127.0.0.1:4173/Gestor-de-Controle-Financeiro-Pessoal/`.
 
-O arquivo `vite.config.js` configura o caminho `/Gestor-de-Controle-Financeiro-Pessoal/` usado pelo site no GitHub Pages, incluindo os arquivos JavaScript, CSS e fontes.
+## Publicação
 
-1. No repositório do GitHub, acesse **Settings → Pages** e selecione **GitHub Actions** em **Build and deployment → Source**.
-2. Envie estas alterações para a branch `main`. O workflow `.github/workflows/deploy.yml` instala as dependências, gera o build e publica somente a pasta `dist/`. Também é possível iniciá-lo manualmente pela aba **Actions** usando **Run workflow**.
-3. Aguarde o workflow **Publicar no GitHub Pages** concluir e acesse [o site publicado](https://giovannasmaia.github.io/Gestor-de-Controle-Financeiro-Pessoal/).
+O workflow [.github/workflows/deploy.yml](.github/workflows/deploy.yml) instala e compila o React em `src/projeto/` e publica `src/projeto/dist/` no GitHub Pages.
 
-Para conferir o build localmente, execute `npm run build` e `npm run preview`, depois abra `http://127.0.0.1:4173/Gestor-de-Controle-Financeiro-Pessoal/`. No PowerShell, use `npm.cmd` se necessário.
+Em Settings → Pages, selecionar GitHub Actions. Após enviar as alterações para main e o workflow concluir:
 
-A pasta `dist/` é gerada automaticamente e permanece fora do controle de versão. Publicar o `index.html` da raiz diretamente resulta em tela branca, pois ele referencia o código JSX de desenvolvimento, que precisa ser compilado pelo Vite.
-
-### Contexto de uso
-
-O sistema deverá considerar dois contextos principais: uso rápido em smartphone, em movimento e sujeito a distrações; e uso analítico em computador, em ambiente estável e com maior tempo de atenção. Também deverá oferecer resumos simples e passivos para usuários com baixa interação tecnológica.
+- [Projeto React](https://giovannasmaia.github.io/Gestor-de-Controle-Financeiro-Pessoal/)
 
 ## Desenvolvimento
 
 ### Descoberta
 
-- [Análise de Concorrência](docs/1_concorrencia.md) 
-- [Pesquisa e Coleta de Dados com Usuários](docs/2_pesquisa_usuarios.md) 
+- [Análise de Concorrência](docs/1_concorrencia.md)
+- [Pesquisa e Coleta de Dados com Usuários](docs/2_pesquisa_usuarios.md)
 - [Perfil do Usuário](docs/3_perfil_usuario.md)
-- [Personas](docs/4_personas.md) 
-- [Cenário de Análise/Problema](docs/5_cenarios.md) 
+- [Personas](docs/4_personas.md)
+- [Cenário de Análise/Problema](docs/5_cenarios.md)
 
 ### Definição
 
-- [Análise de Tarefas](docs/6_analise_tarefas.md) — implementação futura
-- [Requisitos de UX e Metas de Usabilidade](docs/7_requisitos_ux.md) — implementação futura
-- [Arquitetura de Informação e Fluxo do Usuário](docs/8_arquitetura_fluxo.md) — implementação futura
+- [Análise de Tarefas](docs/6_analise_tarefas.md)
+- [Requisitos de UX e Metas de Usabilidade](docs/7_requisitos_ux.md)
+- [Arquitetura de Informação e Fluxo do Usuário](docs/8_arquitetura_fluxo.md)
 
-### Prototipação
+### Prototipação e projeto
 
-- [Prototipação em Papel](docs/9_prototipacao_papel.md) — implementação futura
-- [Média Fidelidade (Figma) e Alta Fidelidade (HTML, CSS e JavaScript)](docs/10_prototipacao_figma.md)
-- [Implementação final em React](docs/14_implementacao_react.md)
+- [Prototipação em Papel](docs/9_prototipacao_papel.md)
+- [Média Fidelidade no Figma](docs/10_prototipacao_figma.md)
+- [Prototipação de alta fidelidade](src/prototipa%C3%A7%C3%A3o%20de%20alta%20fidelidade/)
+- [Projeto React](docs/14_implementacao_react.md)
 
 ### Avaliação
 
-- [Planejamento da Avaliação](docs/11_planejamento_avaliacao.md) — implementação futura
-- [Avaliação de Usabilidade por Inspeção Heurística](docs/12_heuristica.md) — implementação futura
-- [Teste de Usabilidade com Observação do Usuário](docs/13_teste_usabilidade.md) — implementação futura
+- [Planejamento da Avaliação](docs/11_planejamento_avaliacao.md)
+- [Inspeção Heurística](docs/12_heuristica.md)
+- [Teste de Usabilidade](docs/13_teste_usabilidade.md)
+
+A adequação do conteúdo e as avaliações serão continuadas separadamente desta reorganização.

@@ -453,7 +453,7 @@ function HomeScreen({
             fontWeight: 700
           }}
         >
-          Olá, Lucas 👋
+          Olá, Lúcia 👋
         </h2>
 
         <span
@@ -2129,7 +2129,7 @@ function SubSettingScreen({
 
               <input
                 id="input-nome"
-                defaultValue="Lucas Mendes"
+                defaultValue="Lúcia Mendes"
                 style={{
                   width: '100%',
                   padding: '14px 18px',
@@ -2162,7 +2162,7 @@ function SubSettingScreen({
 
               <input
                 id="input-email"
-                defaultValue="lucas@email.com"
+                defaultValue="Lúcia@email.com"
                 style={{
                   width: '100%',
                   padding: '14px 18px',
@@ -2794,7 +2794,7 @@ function SettingsScreen({
               marginBottom: 4
             }}
           >
-            Lucas Mendes
+            Lúcia Mendes
           </p>
 
           <p
@@ -2803,7 +2803,7 @@ function SettingsScreen({
               color: colors.text2
             }}
           >
-            lucas@email.com · Plano Pro Ativo
+            Lúcia@email.com · Plano Pro Ativo
           </p>
         </div>
       </Card>

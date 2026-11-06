@@ -1,6 +1,8 @@
 import { chromium } from '@playwright/test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
+import { fileURLToPath } from 'node:url';
+process.chdir(fileURLToPath(new URL('../../', import.meta.url)));
 const browser = await chromium.launch({ channel: 'msedge', headless: true });
 const page = await browser.newPage({ viewport: { width: 1280, height: 960 } });
 const errors = [];

@@ -1,4 +1,6 @@
 const fs = require('node:fs');
+const path = require('node:path');
+process.chdir(__dirname);
 const parser = require('@babel/parser');
 const traverse = require('@babel/traverse').default;
 const generate = require('@babel/generator').default;
@@ -38,5 +40,8 @@ names.E = 'SettingsTabIcon';
 names.ge = 'NavigationItem';
 traverse(ast, { Program(path) { for (const [from, to] of Object.entries(names)) if (path.scope.hasOwnBinding(from)) path.scope.rename(from, to); } });
 traverse(ast, { JSXIdentifier(path) { if (names[path.node.name]) path.node.name = names[path.node.name]; } });
-fs.writeFileSync('src/App.jsx', "import React from 'react';\n\n// Interface reproduzida do protótipo publicado pelo projeto.\n" + generate(ast, { comments: true }).code + '\n\nexport default App;\n');
-fs.copyFileSync('prototype.css', 'src/styles.css');
+// Saída histórica separada: não sobrescrever o projeto React atual.
+const outputDirectory = path.join(__dirname, 'convertido');
+fs.mkdirSync(outputDirectory, { recursive: true });
+fs.writeFileSync(path.join(outputDirectory, 'App.jsx'), "import React from 'react';\n\n// Interface reproduzida do protótipo publicado pelo projeto.\n" + generate(ast, { comments: true }).code + '\n\nexport default App;\n');
+fs.copyFileSync('prototype.css', path.join(outputDirectory, 'styles.css'));

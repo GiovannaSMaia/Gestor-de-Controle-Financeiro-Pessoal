@@ -17,6 +17,9 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: src/projeto
     steps:
       - name: Obter código
         uses: actions/checkout@v4
@@ -25,6 +28,7 @@ jobs:
         with:
           node-version: '22'
           cache: npm
+          cache-dependency-path: src/projeto/package-lock.json
       - name: Instalar dependências
         run: npm ci
       - name: Gerar versão de produção
@@ -34,7 +38,7 @@ jobs:
       - name: Enviar arquivos de produção
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: src/projeto/dist
 
   deploy:
     needs: build

@@ -1,0 +1,14 @@
+{
+  "name": "gestor-financeiro-prototipo-alta-fidelidade",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Protótipo independente em HTML, CSS e JavaScript.",
+  "scripts": {
+    "dev": "node server.mjs",
+    "start": "node server.mjs"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  }
+}

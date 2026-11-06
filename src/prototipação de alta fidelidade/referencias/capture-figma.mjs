@@ -1,5 +1,9 @@
-import { chromium } from '@playwright/test';
+import { createRequire } from 'node:module';
+const require = createRequire(new URL('../../projeto/package.json', import.meta.url));
+const { chromium } = require('@playwright/test');
 import { mkdir } from 'node:fs/promises';
+import { fileURLToPath } from 'node:url';
+process.chdir(fileURLToPath(new URL('../../../', import.meta.url)));
 
 const browser = await chromium.launch({ channel: 'msedge', headless: true });
 try {

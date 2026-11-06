@@ -1,7 +1,8 @@
-# Código React
+﻿# Código das entregas
 
-Interface baseada no protótipo de média fidelidade no Figma, implementada em React com Vite. O protótipo de alta fidelidade em HTML, CSS e JavaScript está em `public/prototipo-alta-fidelidade/`.
+- [projeto/](projeto/README.md): aplicação React, fontes, dependências e configuração Vite. Executar os comandos npm dentro dessa pasta.
+- [Prototipação de alta fidelidade](prototipa%C3%A7%C3%A3o%20de%20alta%20fidelidade/).
 
-Execute `npm install` e `npm run dev` na raiz do repositório.
+A documentação acadêmica permanece em [docs/](../docs/). O React é a referência do projeto.
 
-Consulte a [documentação da implementação](../docs/14_implementacao_react.md) para estrutura, validação e limites do protótipo.
+As regras de exclusão estão em `.gitignore`, as configurações de editor em `.vscode/` e as dependências em `projeto/node_modules/`. Builds novos ficam em `projeto/dist/`; `dist/` preserva a distribuição anterior. Ambas as pastas de build e as dependências são ignoradas pelo Git. Para carregar a configuração de editor desta pasta, abrir `src/` como pasta de trabalho no VS Code.

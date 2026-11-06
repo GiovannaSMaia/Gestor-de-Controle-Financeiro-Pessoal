@@ -1,6 +1,8 @@
-import { chromium } from '@playwright/test';
+import { createRequire } from 'node:module';
+const require = createRequire(new URL('../projeto/package.json', import.meta.url));
+const { chromium } = require('@playwright/test');
 import assert from 'node:assert/strict';
-import { pathToFileURL } from 'node:url';
+import { fileURLToPath } from 'node:url';
 import fs from 'node:fs/promises';
 
 const browser = await chromium.launch({ channel: 'msedge', headless: true });
@@ -8,7 +10,7 @@ try {
   const page = await browser.newPage({ viewport: { width: 1280, height: 960 } });
   const errors = [];
   page.on('pageerror', error => errors.push(error.message));
-  await page.goto(pathToFileURL(`${process.cwd()}/public/prototipo-alta-fidelidade/index.html`).href);
+  await page.goto(new URL('./index.html', import.meta.url).href);
   await page.locator('#recent-expense-cards > div').first().waitFor();
   await page.waitForFunction(() => getComputedStyle(document.querySelector('#tab-extratos')).display === 'none');
   assert.match(await page.locator('#hero-balance').innerText(), /2\.809,60/);
@@ -48,13 +50,14 @@ try {
   assert.match(await page.locator('#monthly-target-label').textContent(), /4\.500,50/);
   await page.evaluate(() => { monthlyTarget = 3000; renderAll(); });
   await page.evaluate(() => { toggleDarkMode(); switchTab('inicio'); });
-  await fs.mkdir('docs/verificacao/alta-fidelidade', { recursive: true });
-  await page.screenshot({ path: 'docs/verificacao/alta-fidelidade/desktop.png', fullPage: true });
+  const captures = new URL('./verificacao/', import.meta.url);
+  await fs.mkdir(captures, { recursive: true });
+  await page.screenshot({ path: fileURLToPath(new URL('desktop.png', captures)), fullPage: true });
   await page.setViewportSize({ width: 390, height: 844 });
   await page.locator('#mob-extratos').click();
   await page.locator('#mob-inicio').click();
   assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
-  await page.screenshot({ path: 'docs/verificacao/alta-fidelidade/mobile.png', fullPage: true });
+  await page.screenshot({ path: fileURLToPath(new URL('mobile.png', captures)), fullPage: true });
   assert.deepEqual(errors, []);
   console.log('Protótipo: lançamento, busca, filtros, exclusão, metas, tema e navegação móvel OK; sem erros JavaScript.');
 } finally {
