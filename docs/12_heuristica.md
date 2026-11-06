@@ -1,56 +1,79 @@
-1) **Avaliação de IHC através de inspeção HEURÍSTICA \[1 solução completa por pessoa da equipe \- todas as telas do projeto\]**
+## 1. Avaliação de IHC através de Inspeção Heurística (Violações)
 
-> **_NOTE:_**: SOMENTE VIOLAÇÕES
+Nesta seção, realizou-se a inspeção heurística detalhada das interfaces do FinanApp para identificação e classificação de problemas de usabilidade com base nas 10 Heurísticas de Nielsen (1994) e na escala de severidade (0 a 4).
 
-Dez Heurísticas de Nielsen
+### Tabela de Declaração de Violação Padrão da Equipe
+* **ID da Violação:** Código sequencial do problema encontrado.
+* **Tela / Contexto:** Identificação da tela inspecionada.
+* **Heurística Afetada:** Qual das 10 heurísticas foi violada.
+* **Grau de Severidade:** De 0 (Sem importância) a 4 (Catastrófico).
+* **Descrição do Problema:** Explicação detalhada do porquê o elemento fere o princípio de usabilidade.
+* **Sugestão de Correção:** Recomendação para melhoria da interface.
 
-**Descrição da avaliação**
+---
 
-Avaliação heurística, definida por Nielsen e Molich (1994), é um método de avaliação de usabilidade onde um avaliador procura problemas de usabilidade numa interface com o usuário através da análise e interpretação de um conjunto de princípios ou heurísticas. Este método de avaliação é baseado no julgamento do avaliador.
+### Avaliação Individual por Membro da Equipe
 
-1\. Primeiramente, leia e analise as dez heurísticas (ver Tabela 1).
+#### Avaliação 1: Vitória Emanuelly Machado Costa (Telas: Início e Novo Lançamento)
 
-**Tabela 1 \- Conjunto de heurísticas de Nielsen (1994)**
+1. **Tela Início**
+   * **Heurística Afetada:** 1. Visibilidade do status do sistema
+   * **Grau de Severidade:** 2 (Simples)
+   * **Descrição do Problema:** A barra de progresso da meta mensal exibe a porcentagem atual (9%), mas a representação visual da barra está em um tom sólido sem destacar claramente o preenchimento proporcional ao valor acumulado frente ao limite total da meta de forma imediata para o usuário leigo.
+   * **Sugestão de Correção:** Adicionar texturas ou um gradiente mais contrastante na barra de progresso para evidenciar claramente o espaço preenchido em relação ao total.
 
-| 1\. | Visibilidade do status do sistema: |
-| :---- | :---- |
-| O sistema deve sempre manter os usuários informados sobre o que está acontecendo através de feedback apropriado, em um tempo razoável. |  |
-| **2\.** | **Compatibilidade entre sistema e mundo real:** |
-| O sistema deve utilizar a linguagem do usuário, com palavras, frases e conceitos familiares para ele, ao invés de termos específicos de sistemas. Seguir convenções do mundo real, fazendo com que a informação apareça em uma ordem lógica e natural. |  |
-| **3\.** | **Controle e liberdade para o usuário:** |
-| Estão relacionados à situação em que os usuários frequentemente escolhem as funções do sistema por engano e então necessitam de "uma saída de emergência” claramente definida para sair do estado não desejado sem ter que percorrer um longo diálogo, ou seja, é necessário suporte a *undo* e *redo*. |  |
-| **4\.** | **Consistência e padrões:** |
-| Referem-se ao fato de que os usuários não deveriam ter acesso a diferentes situações, palavras ou ações representando a mesma coisa. A interface deve ter convenções não-ambíguas. |  |
-| **5\.** | **Prevenção de erros:** |
-| Os erros são as principais fontes de frustração, ineficiência e ineficácia durante a utilização do sistema. |  |
-| **6\.** |  **Reconhecimento em lugar de lembrança:** |
-| Tornar objetos, ações, opções visíveis e coerentes. O usuário não deve ter que lembrar informações de uma parte do diálogo para outra. Instruções para o uso do sistema devem estar visíveis ou facilmente acessíveis. |  |
-| **7\.** | **Flexibilidade e eficiência de uso:** |
-| A ineficiência nas tarefas pode reduzir a eficácia do usuário e causar-lhes frustração. O sistema deve ser adequado tanto para usuários inexperientes quanto para usuários experientes. |  |
-| **8\.** | **Projeto minimalista e estético:** |
-| Os diálogos não devem conter informações irrelevantes ou raramente necessárias. Cada unidade extra de informação em um diálogo compete com unidades relevantes e diminui sua visibilidade relativa. |  |
-| **9\.** | **Auxiliar os usuários a reconhecer, diagnosticar e recuperar erros:** |
-| Mensagens de erro devem ser expressas em linguagem natural (sem códigos), indicando precisamente o erro e sugerindo uma solução. |  |
-| **10\.** | **Ajuda e documentação:** |
-| Mesmo que seja melhor que o sistema possa ser usado sem documentação, pode ser necessário fornecer ajuda e documentação. Tais informações devem ser fáceis de encontrar, ser centradas na tarefa do usuário, listar passos concretos a serem seguidos e não ser muito grandes. A ajuda deve estar facilmente acessível e on-line. |  |
+2. **Tela Novo Lançamento / Novo Gasto**
+   * **Heurística Afetada:** 5. Prevenção de erros
+   * **Grau de Severidade:** 3 (Grave)
+   * **Descrição do Problema:** O campo de valor numérico principal (`R$ 25,00`) não explicita de forma clara se aceita vírgula ou ponto como separador decimal direto ao digitar pelo teclado, podendo gerar lançamentos incorretos caso o usuário utilize o formato errado.
+   * **Sugestão de Correção:** Incluir uma máscara de formatação dinâmica ou dicas visuais abaixo do campo indicando como os centavos devem ser inseridos.
 
-2\. A seguir, avalie o sistema procurando possíveis problemas de usabilidade.   
-3\. Quando um problema qualquer for detectado, classifique-o em uma das dez heurísticas de Nielsen, anotando o problema na tabela correspondente e atribuindo o **grau de severidade** (0 até 4\) para este problema (dado pela tabela 2\) e recomece novamente até não encontrar mais problemas de usabilidade.
+---
 
-**Tabela 2 \- Grau de severidade dos problemas de usabilidade**
+#### Avaliação 2: Gabriel Matos (Telas: Extratos & Conciliação - Pendências e Histórico)
 
-| Grau de severidade | Tipo | Descrição |
-| ----- | :---- | :---- |
-| 0 | Sem importância | Não afeta a operação da interface |
-| 1 | Cosmético | Não há necessidade imediata de solução |
-| 2 | Simples | Problema de baixa prioridade (pode ser reparado) |
-| 3 | Grave | Problema de alta prioridade (deve ser reparado) |
-| 4 | Catastrófico | Muito grave, deve ser reparado de qualquer forma. |
+3. **Tela Extratos & Conciliação (Aba Pendências)**
+   * **Heurística Afetada:** 3. Controle e liberdade para o usuário
+   * **Grau de Severidade:** 3 (Grave)
+   * **Descrição do Problema:** Quando o usuário clica em "Descartar" em uma transação pendente sugerida por arquivo OFX ou IA, o sistema remove o item imediatamente sem exibir um diálogo de confirmação ou permitir uma ação de *undo* (desfazer) de fácil acesso.
+   * **Sugestão de Correção:** Implementar um componente de alerta temporário (*toast*) com a opção "Desfazer" logo após o descarte, ou uma janela modal de confirmação para exclusões.
 
-> **_NOTE:_**: **colocar o print**
+4. **Tela Extratos & Conciliação (Aba Histórico)**
+   * **Heurística Afetada:** 6. Reconhecimento em lugar de lembrança
+   * **Grau de Severidade:** 2 (Simples)
+   * **Descrição do Problema:** O filtro de categorias ("Todas as Categorias") não exibe ícones visuais correspondentes às categorias no menu suspenso (*dropdown*), exigindo que o usuário lembre exatamente o texto exato cadastrado.
+   * **Sugestão de Correção:** Adicionar os mesmos ícones coloridos utilizados nos cards de despesa ao lado de cada opção no menu de seleção de categorias.
 
-> **_NOTE:_**: **escolher a tabela de declaração de violação padrão da equipe**
+---
 
-2) **INDICAÇÃO DE BOAS PRÁTICAS DE HEURÍSTICA \- HEURÍSTICAS NÃO VIOLADAS \[1 solução completa por pessoa da equipe\]**
+#### Avaliação 3: Giovana Stofel (Telas: Metas & Configurações e Ajustes)
 
-> **_NOTE:_**: **1 EXEMPLO DO SEU SISTEMA ONDE A HEURÍSTICA FOI ATENDIDA (ISSO NÃO É USADO NO MERCADO, SERVE APENAS PARA APRENDIZADO)**
+5. **Tela Metas & Configurações**
+   * **Heurística Afetada:** 9. Auxiliar os usuários a reconhecer, diagnosticar e recuperar erros
+   * **Grau de Severidade:** 3 (Grave)
+   * **Descrição do Problema:** Os campos de limites de gastos por categoria aceitam a digitação de valores arbitrários, mas não exibem mensagens de validação em tempo real caso o usuário insira um valor negativo ou letras acidentalmente antes de clicar em "Salvar Configurações".
+   * **Sugestão de Correção:** Validar os campos instantaneamente no evento de perda de foco (*onBlur*), destacando a borda em vermelho e exibindo uma mensagem descritiva de erro em linguagem natural.
+
+6. **Tela Ajustes e Conta (Perfil e Senha)**
+   * **Heurística Afetada:** 4. Consistência e padrões
+   * **Grau de Severidade:** 1 (Cosmético)
+   * **Descrição do Problema:** Há uma inconsistência de terminologia nos campos de segurança da conta: na tela de alteração de senha o sistema utiliza o termo em português europeu/técnico *"Palavra-passe"* em vez do termo amplamente padronizado no Brasil *"Senha"*, que é utilizado no menu principal.
+   * **Sugestão de Correção:** Padronizar todos os rótulos de texto da interface para o português brasileiro ("Senha Atual" e "Nova Senha").
+
+---
+
+## 2. Indicação de Boas Práticas de Heurística – Heurísticas Não Violadas
+
+> *Nota: Esta seção apresenta exemplos práticos de telas do sistema onde as heurísticas de Nielsen foram rigorosamente atendidas e aplicadas com excelência como boas práticas de projeto.*
+
+### 1. Vitória Machado — Heurística 2: Compatibilidade entre sistema e mundo real
+* **Exemplo no Sistema:** Tela de Início / Menu Superior e Saudação
+* **Justificativa da Boa Prática:** O sistema utiliza uma linguagem perfeitamente adaptada ao cotidiano financeiro do usuário brasileiro, empregando saudações amigáveis ("Olá, Lucas"), ícones intuitivos e amplamente reconhecidos no mundo real (como o ícone de carteira/extratos, metas e engrenagem de ajustes) e formatação monetária padrão em Reais (`R$ 272,80`), reduzindo a carga cognitiva e facilitando a compreensão imediata.
+
+### 2. Gabriel Matos — Heurística 10: Ajuda e documentação
+* **Exemplo no Sistema:** Tela de Ajustes e Conta / Ajuda e Suporte
+* **Justificativa da Boa Prática:** A seção de suporte e ajustes está centralizada em um local previsível e de fácil acesso no menu principal do aplicativo. As opções de navegação oferecem caminhos claros para a resolução de dúvidas, garantindo que o usuário encontre diretrizes de suporte on-line de maneira centralizada e objetiva sempre que necessário.
+
+### 3. Giovana Stofel — Heurística 8: Projeto minimalista e estético
+* **Exemplo no Sistema:** Tela de Aparência e Tema
+* **Justificativa da Boa Prática:** A interface de customização visual adota um design minimalista, apresentando apenas as opções estritamente necessárias ("Modo Claro" e "Modo Noturno") representadas por cartões visuais limpios e sem poluição visual. A ausência de elementos irrelevantes maximiza a visibilidade das escolhas disponíveis, proporcionando uma experiência estética agradável e direta ao ponto.
