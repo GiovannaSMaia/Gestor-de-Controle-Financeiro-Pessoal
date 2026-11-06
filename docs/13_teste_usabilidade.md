@@ -53,7 +53,7 @@ O fluxo metodológico adotado pela equipe para a condução dos testes de observ
 | **3** | Sucesso Parcial | 2 | Não completou a ação de desfazer (1), Navegação (1) | 25 segundos | Confusão Moderada |
 | **4** | Sucesso Total | 0 | Nenhum erro | 11 segundos | Totalmente Satisfeito |
 
-* **Links dos vídeos:** [Gravação da Sessão - Usuário 2 (Exemplo)](https://github.com/GiovannaSMaia/Gestor-de-Controle-Financeiro-Pessoal)
+* **Links dos vídeos:** [Gravação da Sessão - Usuário 2](https://youtu.be/i9gbKz3uG9s)
 * **Respostas do Formulário do Usuário:** Destacou a praticidade da conciliação automática com IA na Tarefa 3, porém apontou falta de clareza imediata sobre o que acontece ao descartar uma transação pendente por engano.
 
 ---
