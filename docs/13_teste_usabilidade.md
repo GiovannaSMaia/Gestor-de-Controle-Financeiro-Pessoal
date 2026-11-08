@@ -68,7 +68,7 @@ O fluxo metodológico adotado pela equipe para a condução dos testes de observ
 | **3** | Sucesso Total | 0 | Nenhum erro | 15 segundos | Satisfeito |
 | **4** | Sucesso Parcial | 1 | Compreensão de validação de campos | 18 segundos | Neutro / Insatisfeito |
 
-* **Links dos vídeos:** [Gravação da Sessão - Usuário 3 (Exemplo)](https://github.com/GiovannaSMaia/Gestor-de-Controle-Financeiro-Pessoal)
+* **Links dos vídeos:** [Gravação da Sessão - Usuário 3 (Exemplo)]([https://github.com/GiovannaSMaia/Gestor-de-Controle-Financeiro-Pessoal](https://youtu.be/OzKKersiWqw))
 * **Respostas do Formulário do Usuário:** Avaliou positivamente o design moderno e o modo escuro, mas sugeriu avisos visuais mais claros na alteração de limites de metas na Tarefa 4 para evitar salvamentos incorretos.
 
 ---
