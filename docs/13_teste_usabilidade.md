@@ -38,7 +38,7 @@ O fluxo metodológico adotado pela equipe para a condução dos testes de observ
 | **3** | Sucesso Total | 0 | Nenhum erro | 12 segundos | Satisfeito |
 | **4** | Sucesso Total | 0 | Nenhum erro | 10 segundos | Totalmente Satisfeito |
 
-* **Links dos vídeos:** [Gravação da Sessão - Usuário 1 (Exemplo)](https://github.com/GiovannaSMaia/Gestor-de-Controle-Financeiro-Pessoal)
+* **Links dos vídeos:** [Gravação da Sessão - Usuário 1 (Exemplo)](https://youtu.be/7txh6__ewrc)
 * **Respostas do Formulário do Usuário:** O usuário relatou que a interface possui um visual limpo e agradável, mas sentiu leve hesitação ao digitar o valor monetário devido à ausência de máscara explícita de centavos na Tarefa 2.
 
 ---
